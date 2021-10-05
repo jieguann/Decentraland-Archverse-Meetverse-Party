@@ -12,7 +12,7 @@ export class SpawnSystem implements ISystem {
     dropCount: number;
     position: PositionType;
     constructor(position: PositionType){
-        this.dropCount = 10;
+        this.dropCount = 4;
         this.position = position;
     }
     update(dt: number) {
