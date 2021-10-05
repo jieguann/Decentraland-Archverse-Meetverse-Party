@@ -8,6 +8,8 @@ interface CollidedPlayer {
   position?: PositionType
 }
 
+const clip = new AudioClip("sounds/drum.mp3")
+
 connect("my_room").then((room) => {
     log("Connected!");
    
@@ -44,7 +46,7 @@ connect("my_room").then((room) => {
       }
     })
 
-    class RotatorSystem {
+    class PlayerPositionUpdate {
 
         // this group will contain every entity that has a Transform component
         group = engine.getComponentGroup(Transform)
@@ -63,7 +65,7 @@ connect("my_room").then((room) => {
       }
       
       // Add a new instance of the system to the engine
-      engine.addSystem(new RotatorSystem())
+      engine.addSystem(new PlayerPositionUpdate())
 
     
 

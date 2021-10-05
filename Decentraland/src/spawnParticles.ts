@@ -37,6 +37,13 @@ dropMaterial.texture = dropTexture;
 
 function spawnDrop(position: PositionType){
     const drop = new Entity();
+    //add sound clip
+    const clip = new AudioClip("sounds/drum.mp3")
+    const source = new AudioSource(clip)
+    drop.addComponent(source)
+    source.playing = true
+    source.playOnce()
+    //main
     drop.addComponent(new IsDrop());
     drop.addComponent(new Transform({
         position: new Vector3(position.x, position.y + 1, position.z),
