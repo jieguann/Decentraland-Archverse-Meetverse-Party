@@ -5,7 +5,7 @@ export class IsDrop{
     constructor(){}
 }
 
-const dropSpeed = 1;
+const dropSpeed = 0.5;
 const drops = engine.getComponentGroup(IsDrop);
 
 export class SpawnSystem implements ISystem {
