@@ -32,7 +32,7 @@ export async function connect(roomName: string, options: any = {}) {
     
     
     const ENDPOINT = (isPreview)
-        ? "ws://192.168.31.177:2567" // local environment
+        ? "ws://127.0.0.1:2567" // local environment
         : "wss://ymyzx8.colyseus.dev"; // production environment
     
 
