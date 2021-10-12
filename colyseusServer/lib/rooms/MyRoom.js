@@ -1,4 +1,11 @@
 "use strict";
+/*
+方案一：
+不行-物体附在玩家身上，用trigger去触发。
+
+方案二：
+实时把array发送到客户端
+*/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MyRoom = exports.ArrayPlayersPosition = void 0;
 const colyseus_1 = require("colyseus");
@@ -9,9 +16,9 @@ const ROUND_DURATION = 60 * 3;
 const MAX_BLOCK_HEIGHT = 19;
 //完成测试
 //flat for the distance
-let distanceFlat = true;
 //let midPlayer
 exports.ArrayPlayersPosition = [];
+//let ArrayPlayersPosition2:any[] = []
 class MyRoom extends colyseus_1.Room {
     onCreate(options) {
         this.setState(new MyRoomState_1.MyRoomState());
@@ -40,30 +47,67 @@ class MyRoom extends colyseus_1.Room {
                     exports.ArrayPlayersPosition[i].x = playersPosition.x;
                     exports.ArrayPlayersPosition[i].y = playersPosition.y;
                     exports.ArrayPlayersPosition[i].z = playersPosition.z;
-                }
-                let distance;
-                let player1;
-                let player2;
-                //caculate the distance between players
-                for (let i = 1; i < exports.ArrayPlayersPosition.length; i++) {
-                    player1 = exports.ArrayPlayersPosition[i - 1];
-                    player2 = exports.ArrayPlayersPosition[i];
-                    let x = player1.x - player2.x;
-                    let y = player1.y - player2.y;
-                    let z = player1.z - player2.z;
-                    distance = Math.sqrt(x * x + y * y + z * z);
-                    //middle of the Player 1 and 2
-                    let midPlayer = [(player1.x + player2.x) / 2, (player1.y + player2.y) / 2, (player1.z + player2.z) / 2];
-                    if (distance < 1 && distanceFlat == true) {
-                        console.log(midPlayer);
-                        this.broadcast("midPlayer", midPlayer);
-                        distanceFlat = false;
-                    }
-                    else if (distance > 1.5) {
-                        distanceFlat = true;
-                    }
+                    //this.broadcast(ArrayPlayersPosition);
                 }
             }
+            this.broadcast("PlayerPositionArray", exports.ArrayPlayersPosition);
+            //ArrayPlayersPosition2 = ArrayPlayersPosition
+            /*
+            let distanceArray:number[] = []
+            
+            let distanceFlat:boolean[] = []
+            let player1
+            let player2
+            let x:number
+            let y:number
+            let z:number
+   
+            //let midPlayer:any[] = []
+            //caculate the distance between players
+            for(let i = 0;i<ArrayPlayersPosition.length;i++){
+             for(let k = 0;k<ArrayPlayersPosition.length;k++){
+             player1 = ArrayPlayersPosition[i];
+             player2 = ArrayPlayersPosition[k];
+             if(i != k){
+               x = player1.x - player2.x
+               y = player1.y - player2.y
+               z = player1.z - player2.z
+               distanceArray[i*k/2] = Math.sqrt(x*x + y*y + z*z)
+               
+             }
+             
+       }
+    }
+   
+           console.log(distanceArray)
+           */
+            /*
+            for(let i =1;i<ArrayPlayersPosition.length;i++){
+              
+              player1 = ArrayPlayersPosition[i-1];
+              player2 = ArrayPlayersPosition[i];
+              
+              x = player1.x - player2.x
+              y = player1.y - player2.y
+              z = player1.z - player2.z
+              
+              distance[i] = Math.sqrt(x*x + y*y + z*z)
+              //middle of the Player 1 and 2
+             //midPlayer[i] = [(player1.x + player2.x)/2, (player1.y + player2.y)/2,(player1.z + player2.z)/2]
+   
+             distanceFlat[i-1] = true
+             if(distance[i-1] < 1 && distanceFlat[i-1] == true){
+               console.log(true);
+               //this.broadcast("midPlayer", midPlayer[i]);
+               distanceFlat[i-1] = false
+             
+             }
+             else if(distance[i-1] > 1.5){
+             distanceFlat[i-1] = true
+             }
+   
+     }
+     */
         });
         this.onMessage("fall", (client, atPosition) => {
             this.broadcast("fall", atPosition);
