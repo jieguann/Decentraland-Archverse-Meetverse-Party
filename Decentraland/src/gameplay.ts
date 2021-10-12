@@ -3,6 +3,9 @@ import { connect } from "./connection";
 import {SpawnSystem} from "./spawnParticles";
 //import { testSource, middleCube } from "./sceneObject";
 
+//add sound clip
+
+
 interface CollidedPlayer {
   sessionId: string;
   position?: PositionType
@@ -46,6 +49,23 @@ connect("my_room").then((room) => {
       }
     })
 
+    let collidedPlayers: any = {};
+    var initPosition: [] = [];
+    Object.defineProperty(collidedPlayers, 'positions', {
+      get: function(){
+        return initPosition;
+      },
+      set: function(value){
+        if(value && value.length && JSON.stringify(value) !== JSON.stringify(initPosition)){
+          value.map((position: PositionType) => {
+            playAnimation(position);
+          })
+        }
+        initPosition = value;
+      }
+    })
+
+
     class PlayerPositionUpdate {
 
         // this group will contain every entity that has a Transform component
@@ -74,10 +94,10 @@ connect("my_room").then((room) => {
         
     }
     let playerLength:number
-    let x:number[] = []
-    let y:number[] = []
-    let z:number[] = []
-    let distanceArray:number[] = []
+    // let x:number[] = []
+    // let y:number[] = []
+    // let z:number[] = []
+    // let distanceArray:number[] = []
     
     //let distanceFlat:boolean[play] = [] 
     room.onMessage("PlayerPositionArray", (Player) => {
@@ -96,20 +116,42 @@ connect("my_room").then((room) => {
       //计算玩家距离方法
       //此处大于0.4是让玩家不计算与自己的距离
       
-      for(let i=0;i<Player.length;i++){
-         x[i] = Camera.instance.feetPosition.x - Player[i].x
-         y[i] = Camera.instance.feetPosition.y - Player[i].y
-         z[i] = Camera.instance.feetPosition.z - Player[i].z
-         distanceArray[i] = Math.sqrt(x[i]*x[i] + y[i]*y[i] + z[i]*z[i])
+      // for(let i=0;i<Player.length;i++){
+      //    x[i] = Camera.instance.feetPosition.x - Player[i].x
+      //    y[i] = Camera.instance.feetPosition.y - Player[i].y
+      //    z[i] = Camera.instance.feetPosition.z - Player[i].z
+      //    distanceArray[i] = Math.sqrt(x[i]*x[i] + y[i]*y[i] + z[i]*z[i])
          
-         if(distanceArray[i] < 1 && distanceArray[i]>0.4 ){
-          // log(distanceArray[i])
-          //distanceFlat = false
-          collidedPlayer.position = {x: Player[i].x, y: Player[i].y, z: Player[i].z}
-          collidedPlayer.sessionId = Player[i].clientId;
-          break;
-         }
+      //    if(distanceArray[i] < 1 && distanceArray[i]>0.4 ){
+      //     // log(distanceArray[i])
+      //     //distanceFlat = false
+      //     collidedPlayer.position = {x: Player[i].x, y: Player[i].y, z: Player[i].z}
+      //     collidedPlayer.sessionId = Player[i].clientId;
+      //     break;
+      //    }
+      // }
+
+
+      let collidedPlayerPositions: PositionType[] = [];
+      let pl = Player.length;
+      for(let i = 0; i < pl; i++) {
+        let x: number[] = [];
+        let y: number[] = [];
+        let z: number[] = [];
+        let distanceArray: number[] = [];
+        for(let j = i + 1; j < pl; j++){
+          x[j] = Player[j].x - Player[i].x;
+          y[j] = Player[j].y - Player[i].y;
+          z[j] = Player[j].z - Player[i].z;
+          distanceArray[j] = Math.sqrt(x[j]*x[j] + y[j]*y[j] + z[j]*z[j]);
+          if(distanceArray[j] < 1 && distanceArray[j] > 0.4 ) {
+            collidedPlayerPositions.push({x: Player[j].x, y: Player[j].y, z: Player[j].z})
+          }
+        }
       }
+
+      collidedPlayers.positions = collidedPlayerPositions;
+
       //log(distanceArray)
       //Play Sound
       //testSource.playing = true

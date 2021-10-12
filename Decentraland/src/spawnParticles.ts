@@ -5,14 +5,14 @@ export class IsDrop{
     constructor(){}
 }
 
-const dropSpeed = 0.5;
+const dropSpeed = 1;
 const drops = engine.getComponentGroup(IsDrop);
 
 export class SpawnSystem implements ISystem {
     dropCount: number;
     position: PositionType;
     constructor(position: PositionType){
-        this.dropCount = 4;
+        this.dropCount = 10;
         this.position = position;
     }
     update(dt: number) {
@@ -37,12 +37,7 @@ dropMaterial.texture = dropTexture;
 
 function spawnDrop(position: PositionType){
     const drop = new Entity();
-    //add sound clip
-    const clip = new AudioClip("sounds/drum.mp3")
-    const source = new AudioSource(clip)
-    drop.addComponent(source)
-    source.playing = true
-    source.playOnce()
+    
     //main
     drop.addComponent(new IsDrop());
     drop.addComponent(new Transform({
