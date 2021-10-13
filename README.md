@@ -6,5 +6,5 @@ A virtual music party in Decentraland brings users to use their virtual avatar b
 Jie Guan, Fan Yao, Mingxuan Xie, Flyn Fan
 
 ## Tools
-Colyseus for Server https://www.colyseus.io/
+Colyseus for Server https://www.colyseus.io/ \
 Decentraland SDK https://docs.decentraland.org/
