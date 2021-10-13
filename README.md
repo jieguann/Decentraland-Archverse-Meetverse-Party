@@ -1,4 +1,4 @@
-# MusicProject
+# Archverse Music Project
 ## Music Performence in Decentraland for Archverse
 A virtual music party in Decentraland brings users to use their virtual avatar body to play sound through touch.
 
