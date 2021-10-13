@@ -30,17 +30,18 @@ export async function connect(roomName: string, options: any = {}) {
 
     // const ENDPOINT = "wss://hept-j.colyseus.dev";
     
-    
+    /*
     const ENDPOINT = (isPreview)
+    
         ? "ws://127.0.0.1:2567" // local environment
         : "wss://ymyzx8.colyseus.dev"; // production environment
-    
+    */
 
-        /*
+        
         const ENDPOINT = (isPreview)
         ? "wss://ymyzx8.colyseus.dev" // local environment
         : "wss://ymyzx8.colyseus.dev"; // production environment
-*/
+
     if (isPreview) { addConnectionDebugger(ENDPOINT); }
     const client = new Client(ENDPOINT);
 
