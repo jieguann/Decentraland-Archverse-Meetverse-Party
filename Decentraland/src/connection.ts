@@ -42,7 +42,7 @@ export async function connect(roomName: string, options: any = {}) {
         ? "wss://ymyzx8.colyseus.dev" // local environment
         : "wss://ymyzx8.colyseus.dev"; // production environment
 
-    if (isPreview) { addConnectionDebugger(ENDPOINT); }
+    addConnectionDebugger(ENDPOINT); 
     const client = new Client(ENDPOINT);
 
     try {
@@ -50,7 +50,7 @@ export async function connect(roomName: string, options: any = {}) {
         // Docs: https://docs.colyseus.io/client/client/#joinorcreate-roomname-string-options-any
         //
         const room = await client.joinOrCreate<any>(roomName, options);
-        if (isPreview) { updateConnectionDebugger(room); }
+        updateConnectionDebugger(room); 
 
         return room;
 

@@ -1,6 +1,7 @@
 import { PositionType } from "@decentraland/RestrictedActions";
 import { connect } from "./connection";
 import {SpawnSystem} from "./spawnParticles";
+import utils from '../node_modules/decentraland-ecs-utils/index'
 //import { testSource, middleCube } from "./sceneObject";
 
 //add sound clip
@@ -15,6 +16,29 @@ const clip = new AudioClip("sounds/drum.mp3")
 
 connect("my_room").then((room) => {
     log("Connected!");
+    const sendMessageEntity = new Entity()
+
+    runSendmessage()
+function runSendmessage(){
+  //sendMessageEntity.addComponent(new BoxShape())
+  //sendMessageEntity.addComponent(new Transform())
+
+// add a repeated function
+  sendMessageEntity.addComponent(
+  new utils.Interval(500, () => {
+room.send("player-position", Camera.instance.feetPosition);
+  })
+)
+
+// add entity to scene
+engine.addEntity(sendMessageEntity)
+}
+
+
+
+
+
+
    
     let collidedPlayerSessionId = "";
     let collidedPlayerPosition: PositionType = {
@@ -50,7 +74,7 @@ connect("my_room").then((room) => {
     })
 
     let collidedPlayers: any = {};
-    var initPosition: [] = [];
+    var  initPosition: [] = [];
     Object.defineProperty(collidedPlayers, 'positions', {
       get: function(){
         return initPosition;
@@ -65,7 +89,7 @@ connect("my_room").then((room) => {
       }
     })
 
-
+/*
     class PlayerPositionUpdate {
 
         // this group will contain every entity that has a Transform component
@@ -75,8 +99,10 @@ connect("my_room").then((room) => {
           // iterate over the entities of the group
           for (let entity of this.group.entities) {
             // get the Transform component of the entity
-            
-           room.send("player-position", Camera.instance.feetPosition);
+            new utils.Interval(0.1, () => {
+              //room.send("player-position", Camera.instance.feetPosition);
+            })
+           
     
            //room.send("player-position", Camera.instance.feetPosition.x);
       
@@ -87,7 +113,7 @@ connect("my_room").then((room) => {
       // Add a new instance of the system to the engine
       engine.addSystem(new PlayerPositionUpdate())
 
-    
+    */
 
     // when a player leaves, remove it from the leaderboard.
     room.state.players.onRemove = () => {
