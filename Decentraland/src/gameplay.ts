@@ -29,7 +29,7 @@ function runSendmessage(){
 //every n milliseconds.
 //0.5 second
   sendMessageEntity.addComponent(
-  new utils.Interval(500, () => {
+  new utils.Interval(100, () => {
 room.send("player-position", Camera.instance.feetPosition);
   })
 )
