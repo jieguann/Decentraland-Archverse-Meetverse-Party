@@ -24,7 +24,6 @@ function runSendmessage(){
   //sendMessageEntity.addComponent(new Transform())
 
 // add a repeated function
-// add a repeated function
 //需要提高吗？
 //every n milliseconds.
 //0.5 second

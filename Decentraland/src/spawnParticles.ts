@@ -8,11 +8,14 @@ export class IsDrop{
 const dropSpeed = 1;
 const drops = engine.getComponentGroup(IsDrop);
 
+
+//To do destory the drop after 3 second
 export class SpawnSystem implements ISystem {
+
     dropCount: number;
     position: PositionType;
     constructor(position: PositionType){
-        this.dropCount = 10;
+        this.dropCount = 5;
         this.position = position;
     }
     update(dt: number) {
@@ -21,10 +24,19 @@ export class SpawnSystem implements ISystem {
             spawnDrop(this.position);
         }
         for(let drop of drops.entities){
-            let position = drop.getComponent(Transform).position;
+            
+
+            let position = drop.getComponent(Transform).position;  22
             position.x = position.x + Math.random() * dt * dropSpeed;
             position.y = position.y + Math.random() * dt * dropSpeed;
             position.z = position.z + Math.random() * dt * dropSpeed;
+
+            //add time
+            let timer:number = 3
+            if(timer > 0){
+               timer -= dt
+            }
+            else(engine.removeEntity(drop))
         }
     }
 }
@@ -37,7 +49,12 @@ dropMaterial.texture = dropTexture;
 
 function spawnDrop(position: PositionType){
     const drop = new Entity();
-    
+    //add sound clip
+    const clip = new AudioClip("sounds/drum.mp3")
+    const source = new AudioSource(clip)
+    drop.addComponent(source)
+    source.playing = true
+    source.playOnce()
     //main
     drop.addComponent(new IsDrop());
     drop.addComponent(new Transform({
