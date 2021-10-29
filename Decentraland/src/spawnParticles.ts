@@ -26,17 +26,15 @@ export class SpawnSystem implements ISystem {
         for(let drop of drops.entities){
             
 
-            let position = drop.getComponent(Transform).position;  22
+            let position = drop.getComponent(Transform).position;
             position.x = position.x + Math.random() * dt * dropSpeed;
             position.y = position.y + Math.random() * dt * dropSpeed;
             position.z = position.z + Math.random() * dt * dropSpeed;
-
-            //add time
-            let timer:number = 3
-            if(timer > 0){
-               timer -= dt
+            if(position.y > 8) {
+                engine.removeEntity(drop);
             }
-            else(engine.removeEntity(drop))
+
+           
         }
     }
 }
