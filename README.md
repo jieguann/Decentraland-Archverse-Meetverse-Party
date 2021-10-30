@@ -7,4 +7,5 @@ Jie Guan, Fan Yao, Mingxuan Xie, Flyn Fan
 
 ## Tools
 Colyseus for Server https://www.colyseus.io/ \
+OSC Control Documentation https://github.com/decentraland-scenes/osc-relay \
 Decentraland SDK https://docs.decentraland.org/
