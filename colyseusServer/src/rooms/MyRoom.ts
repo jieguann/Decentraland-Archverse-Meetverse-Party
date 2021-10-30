@@ -133,6 +133,52 @@ export class MyRoom extends Room<MyRoomState> {
     this.onMessage("fall", (client: Client, atPosition: any) => {
       this.broadcast("fall", atPosition);
     });
+
+
+
+
+//get osc message
+    this.onMessage('change', (client, message) => {
+      switch (message.address) {
+        case '/fader1':
+          this.state.fader1 = message.value
+          this.presence.publish('/fader1', { value: message.value })
+          //console.log(message.value);
+          
+          break
+        case '/fader2':
+          this.state.fader2 = message.value
+          this.presence.publish('/fader2', { value: message.value })
+          break
+        case '/fader3':
+          this.state.fader3 = message.value
+          this.presence.publish('/fader3', { value: message.value })
+          break
+        case '/fader4':
+          this.state.fader4 = message.value
+          this.presence.publish('/fader4', { value: message.value })
+          break
+      }
+    })
+
+    // Get changes from other rooms
+    this.presence.subscribe('/fader1', (message: any) => {
+      this.state.fader1 = message.value
+      //console.log(this.state.fader1)
+    })
+    
+
+    this.presence.subscribe('/fader2', (message: any) => {
+      this.state.fader2 = message.value
+    })
+
+    this.presence.subscribe('/fader3', (message: any) => {
+      this.state.fader3 = message.value
+    })
+
+    this.presence.subscribe('/fader4', (message: any) => {
+      this.state.fader4 = message.value
+    })
   }
 
 
@@ -140,6 +186,7 @@ export class MyRoom extends Room<MyRoomState> {
 
 
   onJoin (client: Client, options: any) {
+    /*
     const newPlayer = new Player().assign({
       name: options.userData.displayName || "Anonymous",
       //ranking: 0,
@@ -150,6 +197,7 @@ export class MyRoom extends Room<MyRoomState> {
 
     console.log(newPlayer.name, "joined! => ", options.userData);
     const displayName = newPlayer.name;
+    */
     //PUsh json
     const clientId =client.sessionId;
     ArrayPlayersPosition.push({clientId:clientId,x:0,y:0,z:0})
