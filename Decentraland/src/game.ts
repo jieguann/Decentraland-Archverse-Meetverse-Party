@@ -1,7 +1,7 @@
 // Import the custom gameplay code.
-import "./gameplay";
+import "./serverConnections/gameplay";
 
-
+/*
 //https://tvhttps.jieguanart.com:8443/live/hello/index.m3u8
 const myVideoClip = new VideoClip("https://tvhttps.jieguanart.com:8443/live/hello/index.m3u8")
 const myVideoTexture = new VideoTexture(myVideoClip)
@@ -21,3 +21,4 @@ screen.addComponent(
 )
 screen.addComponent(myMaterial)
 engine.addEntity(screen)
+*/

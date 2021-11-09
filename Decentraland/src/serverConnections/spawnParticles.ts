@@ -5,7 +5,7 @@ export class IsDrop{
     constructor(){}
 }
 
-const dropSpeed = 1;
+const dropSpeed = 0.1;
 const drops = engine.getComponentGroup(IsDrop);
 
 
@@ -15,7 +15,7 @@ export class SpawnSystem implements ISystem {
     dropCount: number;
     position: PositionType;
     constructor(position: PositionType){
-        this.dropCount = 5;
+        this.dropCount = 1;
         this.position = position;
     }
     update(dt: number) {
@@ -41,7 +41,7 @@ export class SpawnSystem implements ISystem {
 
 const dropShape = new PlaneShape();
 const billboard = new Billboard(false, true, false);
-const dropTexture = new Texture("materials/drop.png", {hasAlpha: true, samplingMode: 1});
+const dropTexture = new Texture("materials/fire.png", {hasAlpha: true, samplingMode: 1});
 const dropMaterial = new BasicMaterial();
 dropMaterial.texture = dropTexture;
 
@@ -54,6 +54,7 @@ function spawnDrop(position: PositionType){
     source.playing = true
     source.playOnce()
     //main
+    const particalScale:number = Math.random() * 0.5 + 0.5;
     drop.addComponent(new IsDrop());
     drop.addComponent(new Transform({
         position: new Vector3(position.x, position.y + 1, position.z),

@@ -14,10 +14,12 @@
     "decentraland-ecs": "latest"
   },
   "dependencies": {
+    "@dcl/ecs-scene-utils": "^1.7.5",
     "colyseus.js": "^0.14.13",
     "decentraland-ecs-utils": "^1.5.2"
   },
   "bundleDependencies": [
-    "colyseus.js"
+    "colyseus.js",
+    "@dcl/ecs-scene-utils"
   ]
 }

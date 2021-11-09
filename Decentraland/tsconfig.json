@@ -8,6 +8,9 @@
       "colyseus.js": [
         "node_modules\\colyseus.js\\dist\\colyseus.d.ts",
         "node_modules/colyseus.js/dist/colyseus.d.ts"
+      ],
+      "@dcl/ecs-scene-utils": [
+        "node_modules\\@dcl\\ecs-scene-utils\\dist\\index.d.ts"
       ]
     },
     "baseUrl": "."
