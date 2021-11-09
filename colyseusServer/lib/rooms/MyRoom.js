@@ -170,7 +170,7 @@ class MyRoom extends colyseus_1.Room {
     }
     onLeave(client, consented) {
         const player = this.state.players.get(client.sessionId);
-        console.log(player.name, "left!");
+        //console.log(player.name, "left!");
         this.state.players.delete(client.sessionId);
         for (let i = 0; i < exports.ArrayPlayersPosition.length; i++) {
             if (exports.ArrayPlayersPosition[i].clientId == client.sessionId) {
