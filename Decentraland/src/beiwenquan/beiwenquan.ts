@@ -7,6 +7,17 @@ export function beiwenquan(): void {
         rotation: Quaternion.Euler(0, 180, 0),
         position: new Vector3(0, 0, 0)
     }))
+
+    //舞台
+    const BoatStage = new Entity();
+    engine.addEntity(BoatStage);
+    BoatStage.addComponent(new GLTFShape("models/beiwenquan/BoatStage.glb"));
+    BoatStage.addComponent(new Transform({
+        rotation: Quaternion.Euler(0, 180, 0),
+        position: new Vector3(0, 0, 0)
+    }))
+
+
     //视频
     //https://www.dropbox.com/s/ko4zmr320jsbb2v/SSS.mp4?dl=0
     //https://tvhttps.jieguanart.com:8443/live/hello/index.m3u8
