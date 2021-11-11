@@ -15,11 +15,15 @@
   },
   "dependencies": {
     "@dcl/ecs-scene-utils": "^1.7.5",
+    "@dcl/npc-scene-utils": "^1.4.0",
+    "@dcl/ui-scene-utils": "^1.8.1",
     "colyseus.js": "^0.14.13",
     "decentraland-ecs-utils": "^1.5.2"
   },
   "bundleDependencies": [
     "colyseus.js",
-    "@dcl/ecs-scene-utils"
+    "@dcl/ecs-scene-utils",
+    "@dcl/ui-scene-utils",
+    "@dcl/npc-scene-utils"
   ]
 }

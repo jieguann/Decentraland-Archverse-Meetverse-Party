@@ -35,7 +35,7 @@ export async function connect(roomName: string, options: any = {}) {
     
 
         
-    const ENDPOINT =  "wss://ymyzx8.colyseus.dev";
+    const ENDPOINT =  "wss://ymyzx8.colyseus.dev" // local environment
         
 
     addConnectionDebugger(ENDPOINT); 

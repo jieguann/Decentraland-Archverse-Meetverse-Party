@@ -1,24 +1,41 @@
 // Import the custom gameplay code.
 import "./serverConnections/gameplay";
 
-/*
-//https://tvhttps.jieguanart.com:8443/live/hello/index.m3u8
-const myVideoClip = new VideoClip("https://tvhttps.jieguanart.com:8443/live/hello/index.m3u8")
-const myVideoTexture = new VideoTexture(myVideoClip)
-const myMaterial = new BasicMaterial()
-myMaterial.texture = myVideoTexture
+import { BeiBei } from './beibei/beibei'
+import utils from '../node_modules/decentraland-ecs-utils/index'
+import { beiwenquan } from './beiwenquan/beiwenquan'
+//北碚代码
 
-myVideoTexture.playing = true
+//检查时间 
+async function checkTime() {
+  let url = 'https://worldtimeapi.org/api/timezone/etc/gmt'
 
-const screen = new Entity()
-screen.addComponent(new PlaneShape())
-screen.addComponent(
-  new Transform({
-    position: new Vector3(32, 8, 16),
-    scale: new Vector3(9.6, 5.4, 1),
-    rotation: Quaternion.Euler(0, 0, 0)
+  try {
+    let response = await fetch(url)
+    let json = await response.json()
+    let toDate = new Date(json.datetime)
+    let a = toDate.getHours()
+    log(a)
+
+    if (a % 2) {
+      beiwenquan()
+      
+      NewYearTimeChecker.removeComponent(utils.Interval)
+      engine.removeEntity(NewYearTimeChecker)
+    } else {
+      beiwenquan()
+      
+      NewYearTimeChecker.removeComponent(utils.Interval)
+      engine.removeEntity(NewYearTimeChecker)
+    }
+  } catch (e) {
+  }
+}
+
+let NewYearTimeChecker = new Entity()
+engine.addEntity(NewYearTimeChecker)
+NewYearTimeChecker.addComponent(
+  new utils.Interval(10000, () => {
+    checkTime()
   })
 )
-screen.addComponent(myMaterial)
-engine.addEntity(screen)
-*/
