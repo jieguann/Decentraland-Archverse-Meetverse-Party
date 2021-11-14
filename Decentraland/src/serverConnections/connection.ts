@@ -1,5 +1,5 @@
 //
-// IMPORTANT : 
+// IMPORTANT :
 // - include `noLib: false` to your tsconfig.json file, under "compilerOptions"
 //
 ///<reference lib="es2015.symbol" />
@@ -29,16 +29,13 @@ export async function connect(roomName: string, options: any = {}) {
     log("userData:", options.userData);
 
     // const ENDPOINT = "wss://hept-j.colyseus.dev";
-    
-    
-    //const ENDPOINT = (isPreview) ? "ws://127.0.0.1:2567" : "wss://ymyzx8.colyseus.dev"; 
-    
 
-        
-    const ENDPOINT =  "wss://ymyzx8.colyseus.dev" // local environment
-        
 
-    addConnectionDebugger(ENDPOINT); 
+    const ENDPOINT = (isPreview) ? "ws://127.0.0.1:2567" : "wss://ymyzx8.colyseus.dev";
+    // const ENDPOINT =  "wss://ymyzx8.colyseus.dev" // local environment
+
+
+    addConnectionDebugger(ENDPOINT);
     const client = new Client(ENDPOINT);
 
     try {
@@ -46,7 +43,7 @@ export async function connect(roomName: string, options: any = {}) {
         // Docs: https://docs.colyseus.io/client/client/#joinorcreate-roomname-string-options-any
         //
         const room = await client.joinOrCreate<any>(roomName, options);
-        updateConnectionDebugger(room); 
+        updateConnectionDebugger(room);
 
         return room;
 
