@@ -19,21 +19,21 @@ async function checkTime() {
     if (a % 2) {
       beiwenquan()
       
-      NewYearTimeChecker.removeComponent(utils.Interval)
-      engine.removeEntity(NewYearTimeChecker)
+      TimeChecker.removeComponent(utils.Interval)
+      engine.removeEntity(TimeChecker)
     } else {
       beiwenquan()
       
-      NewYearTimeChecker.removeComponent(utils.Interval)
-      engine.removeEntity(NewYearTimeChecker)
+      TimeChecker.removeComponent(utils.Interval)
+      engine.removeEntity(TimeChecker)
     }
   } catch (e) {
   }
 }
 
-let NewYearTimeChecker = new Entity()
-engine.addEntity(NewYearTimeChecker)
-NewYearTimeChecker.addComponent(
+let TimeChecker = new Entity()
+engine.addEntity(TimeChecker)
+TimeChecker.addComponent(
   new utils.Interval(10000, () => {
     checkTime()
   })
