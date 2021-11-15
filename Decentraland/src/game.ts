@@ -1,8 +1,7 @@
 // Import the custom gameplay code.
+import * as utils from '@dcl/ecs-scene-utils'
 import "./serverConnections/gameplay";
-
 import { BeiBei } from './beibei/beibei'
-import utils from '../node_modules/decentraland-ecs-utils/index'
 import { beiwenquan } from './beiwenquan/beiwenquan'
 //北碚代码
 

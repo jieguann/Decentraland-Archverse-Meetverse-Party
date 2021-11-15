@@ -1,12 +1,83 @@
+import { isValidKey } from "./utils"
+
+const randomSoundPaths = {
+    Japanese_drum1: 'sounds/random/percussion/Japanese_drum1.mp3',
+    Japanese_drum2: 'sounds/random/percussion/Japanese_drum2.mp3',
+    bass_drum: 'sounds/random/percussion/bass_drum.mp3',
+    drum1: 'sounds/random/percussion/drum1.mp3',
+    drum2: 'sounds/random/percussion/drum2.mp3',
+    small_drum1: 'sounds/random/percussion/small_drum1.mp3',
+    horror_piano_chord: 'sounds/random/piano/horror_piano_chord.mp3',
+    pianoA: 'sounds/random/piano/pianoA.mp3',
+    pianoB: 'sounds/random/piano/pianoB.mp3',
+    pianoC: 'sounds/random/piano/pianoC.mp3',
+    pianoC2: 'sounds/random/piano/pianoC2.mp3',
+    pianoD: 'sounds/random/piano/pianoD.mp3',
+    pianoE: 'sounds/random/piano/pianoE.mp3',
+    pianoF: 'sounds/random/piano/pianoF.mp3',
+    pianoG: 'sounds/random/piano/pianoG.mp3',
+    Chinese_blade1: 'sounds/random/sampling/Chinese_blade1.mp3',
+    Chinese_blade2: 'sounds/random/sampling/Chinese_blade2.mp3',
+    attack1: 'sounds/random/sampling/attack1.mp3',
+    attack2: 'sounds/random/sampling/attack2.mp3',
+    attack3: 'sounds/random/sampling/attack3.mp3',
+    clenching_my_hand: 'sounds/random/sampling/clenching_my_hand.mp3',
+    cutting_with_a_katana1: 'sounds/random/sampling/cutting_with_a_katana1.mp3',
+    cutting_with_a_katana2: 'sounds/random/sampling/cutting_with_a_katana2.mp3',
+    cutting_with_a_katana3: 'sounds/random/sampling/cutting_with_a_katana3.mp3',
+    damage1: 'sounds/random/sampling/damage1.mp3',
+    damage2: 'sounds/random/sampling/damage2.mp3',
+    damage3: 'sounds/random/sampling/damage3.mp3',
+    damage4: 'sounds/random/sampling/damage4.mp3',
+    damage5: 'sounds/random/sampling/damage5.mp3',
+    damage6: 'sounds/random/sampling/damage6.mp3',
+    damage7: 'sounds/random/sampling/damage7.mp3',
+    extracting_a_knife: 'sounds/random/sampling/extracting_a_knife.mp3',
+    extracting_a_sword: 'sounds/random/sampling/extracting_a_sword.mp3',
+    final_attack: 'sounds/random/sampling/final_attack.mp3',
+    flying_pan: 'sounds/random/sampling/flying_pan.mp3',
+    hitting1: 'sounds/random/sampling/hitting1.mp3',
+    holly_sword1: 'sounds/random/sampling/holly_sword1.mp3',
+    katana1: 'sounds/random/sampling/katana1.mp3',
+    kick1: 'sounds/random/sampling/kick1.mp3',
+    kick2: 'sounds/random/sampling/kick2.mp3',
+    knife: 'sounds/random/sampling/knife.mp3',
+    knocking_a_wall: 'sounds/random/sampling/knocking_a_wall.mp3',
+    middle_kick: 'sounds/random/sampling/middle_kick.mp3',
+    middle_punch1: 'sounds/random/sampling/middle_punch1.mp3',
+    middle_punch2: 'sounds/random/sampling/middle_punch2.mp3',
+    punch2a: 'sounds/random/sampling/punch2a.mp3',
+    punch2b: 'sounds/random/sampling/punch2b.mp3',
+    punch2c: 'sounds/random/sampling/punch2c.mp3',
+    punch31: 'sounds/random/sampling/punch31.mp3',
+    short_punch1: 'sounds/random/sampling/short_punch1.mp3',
+    shuriken_ninja_knifes1: 'sounds/random/sampling/shuriken_ninja_knifes1.mp3',
+    shuriken_ninja_knifes2: 'sounds/random/sampling/shuriken_ninja_knifes2.mp3',
+    shuriken_ninja_knifes3: 'sounds/random/sampling/shuriken_ninja_knifes3.mp3',
+    stabbing: 'sounds/random/sampling/stabbing.mp3',
+    striking: 'sounds/random/sampling/striking.mp3',
+    swing1: 'sounds/random/sampling/swing1.mp3',
+    swing2: 'sounds/random/sampling/swing2.mp3',
+    swing3: 'sounds/random/sampling/swing3.mp3',
+    swing4: 'sounds/random/sampling/swing4.mp3',
+    swish1: 'sounds/random/sampling/swish1.mp3',
+    swish1_2: 'sounds/random/sampling/swish1_2.mp3',
+    swish1_3: 'sounds/random/sampling/swish1_3.mp3',
+    swish2: 'sounds/random/sampling/swish2.mp3',
+    sword_attack1: 'sounds/random/sampling/sword_attack1.mp3',
+    sword_attack2: 'sounds/random/sampling/sword_attack2.mp3',
+    sword_battle_loop: 'sounds/random/sampling/sword_battle_loop.mp3'
+}
+
+let randomSound: any = {}
+for(const key in randomSoundPaths) {
+    if(isValidKey(key, randomSoundPaths)) {
+        randomSound[key] = new AudioClip(randomSoundPaths[key]); 
+    }
+}
+
 export default {
-    randomSound: {
-        bass_drum : new AudioClip("sounds/random/percussion/bass_drum.mp3"),
-        drum1: new AudioClip("sounds/random/percussion/drum1.mp3"),
-        drum2: new AudioClip("sounds/random/percussion/drum2.mp3"),
-        Japanese_drum1: new AudioClip("sounds/random/percussion/Japanese_drum1.mp3"),
-        Japanese_drum2: new AudioClip("sounds/random/percussion/Japanese_drum2.mp3"),
-        small_drum1: new AudioClip("sounds/random/percussion/small_drum1.mp3"),
-    },
+    randomSound: randomSound,
     particles: {
         particles1: new Texture("materials/particles/1.png", { hasAlpha: true, samplingMode: 1}),
         particles2: new Texture("materials/particles/2.png", { hasAlpha: true, samplingMode: 1}),
@@ -17,5 +88,6 @@ export default {
         particles7: new Texture("materials/particles/7.png", { hasAlpha: true, samplingMode: 1}),
         particles8: new Texture("materials/particles/8.png", { hasAlpha: true, samplingMode: 1}),
         particles9: new Texture("materials/particles/9.png", { hasAlpha: true, samplingMode: 1}),
+        bird: new GLTFShape("models/particles/hummingbird.glb"),
     }
 }

@@ -1,6 +1,7 @@
 import { PositionType } from "@decentraland/RestrictedActions";
 import { connect } from "connection";
-import { SpawnSystem } from "spawnParticles";
+// import { SpawnSystem } from "spawnParticles";
+import { SpawnBird } from "./birdParticles";
 import * as utils from '@dcl/ecs-scene-utils'
 import resources from "../resourse";
 import { randomInt, isValidKey } from "../utils";
@@ -100,7 +101,8 @@ connect("my_room").then((room) => {
     if(position.sessionId === roomSessionId) {
       room.send("record-timeline", {position: position, music: playMusiceKey, date: new Date().getTime()})
     }
-    engine.addSystem(new SpawnSystem(position, clip))
+    const pariticlesCount: number = randomInt(5, 10);
+    new SpawnBird(position, clip, pariticlesCount);
   }
 
   //OSC message Control
