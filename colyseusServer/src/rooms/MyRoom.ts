@@ -14,10 +14,7 @@ import DB from '../db';
 export let ArrayPlayersPosition: any[] = []
 //let ArrayPlayersPosition2:any[] = []
 
-
-
 export class MyRoom extends Room<MyRoomState> {
-
   onCreate(options: any) {
     this.setState(new MyRoomState());
     this.onMessage("player-position", (client: Client, playerPosition: any) => {
@@ -47,12 +44,16 @@ export class MyRoom extends Room<MyRoomState> {
 
     this.onMessage("record-timeline", (client: Client, recordInfo: any = {}) => {
       let { date, music, position } = recordInfo;
-      position = position ? JSON.stringify(position, ['x', 'y', 'z', 'sessionId']) : "";
-      DB.run(`insert into timeline(date, music, position) values("${date}", "${music}", '${position}')`, function (err: any) {
-        if(err) {
-          console.log(err);
-        }
-      })
+      position = position ? JSON.stringify(position) : "";
+      try {
+        DB.doc('/' + Math.floor(Math.random() * 1000000) + '/').set({
+          "date": date,
+          "music": music,
+          "position": position
+        })
+      } catch(error) {
+        console.log(error);
+      }
     });
 
     //get osc message
