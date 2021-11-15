@@ -27,19 +27,25 @@ export default Arena({
             //res.send("ArrayPlayersPosition");
         });
 
-        app.get("/db", async (req, res) => {
-            try {
-                let response: any = [];
-                await DB.get().then((queryResult: {docs: any}) => {
-                    for(let doc of queryResult.docs) {
-                        response.push(doc.data());
-                    }
-                })
-                return res.status(200).send(response);
-            } catch(error) {
-                console.log(error);
-                return res.status(500).send(error);
-            }
+        app.get("/db", (req, res) => {
+
+            const date = "1232323";
+            const music = "fasfasf";
+            let position : any = {x:1.00111, y:2.2432, z: 3.325325, sessionId: "fdsafas"};
+            position = JSON.stringify(position, ["x", "y", "z", "sessionId"]);
+            DB.run(`insert into timeline(date, music, position) values("${date}", "${music}", '${position}')`, function (err: any) {
+                if(err) {
+                  console.log(err);
+                }
+            })
+
+            DB.all("select * from timeline", function (err: any, result: any) {
+                if (!err) {
+                    res.send(JSON.stringify(result));
+                } else {
+                    console.log(err);
+                }
+            });
         })
 
         /**

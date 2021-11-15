@@ -9,7 +9,6 @@ const monitor_1 = require("@colyseus/monitor");
  * Import your Room files
  */
 const MyRoom_1 = require("./rooms/MyRoom");
-// import DB from './db';
 exports.default = arena_1.default({
     getId: () => "Your Colyseus App",
     initializeGameServer: (gameServer) => {
@@ -25,15 +24,6 @@ exports.default = arena_1.default({
         app.get("/", (req, res) => {
             res.send(MyRoom_1.ArrayPlayersPosition);
             //res.send("ArrayPlayersPosition");
-        });
-        app.get("/db", (req, res) => {
-            // DB.all("select * from timeline", function (err: any, result: any) {
-            //     if (!err) {
-            //         res.send(JSON.stringify(result));
-            //     } else {
-            //         console.log(err);
-            //     }
-            // });
         });
         /**
          * Bind @colyseus/monitor
