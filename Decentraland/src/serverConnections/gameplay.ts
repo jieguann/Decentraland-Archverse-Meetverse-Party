@@ -101,7 +101,7 @@ connect("my_room").then((room) => {
     if(position.sessionId === roomSessionId) {
       room.send("record-timeline", {position: position, music: playMusiceKey, date: new Date().getTime()})
     }
-    const pariticlesCount: number = randomInt(5, 10);
+    const pariticlesCount: number = randomInt(10, 20);
     new SpawnBird(position, clip, pariticlesCount);
   }
 
