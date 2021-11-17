@@ -96,10 +96,9 @@ connect("my_room").then((room) => {
   function playAnimation(position: CollidedData, clip: any, playMusiceKey: string) {
     log("Play particles animation!!!!")
     // 碰撞的数组里面，如果有当前用户的话，就把信息传统给服务端进行记录
-    log(position.sessionId, 11);
-    log(roomSessionId, 22);
     if(position.sessionId === roomSessionId) {
-      room.send("record-timeline", {position: position, music: playMusiceKey, date: new Date().getTime()})
+      const dateSceond = Date.parse(new Date().toString())/1000;
+      room.send("record-timeline", {position: position, music: playMusiceKey, date: dateSceond})
     }
     const pariticlesCount: number = randomInt(10, 20);
     new SpawnBird(position, clip, pariticlesCount);
