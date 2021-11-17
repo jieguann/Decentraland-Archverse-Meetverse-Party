@@ -36,6 +36,6 @@
     "colyseus": "^0.14.20",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "firebase-admin": "^10.0.0"
+    "sqlite3": "^5.0.2"
   }
 }

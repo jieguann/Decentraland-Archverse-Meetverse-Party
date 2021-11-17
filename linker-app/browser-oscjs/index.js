@@ -72,7 +72,7 @@ const LOCAL = true
 
 //var client = new Colyseus.Client(LOCAL?'ws://localhost:2567': `wss://l9tio3.colyseus.dev`);
 //var client = new Colyseus.Client(`wss://noc8vp.us-east-vin.colyseus.net`);
-var client = new Colyseus.Client(`wss://ymyzx8.colyseus.dev`);
+var client = new Colyseus.Client(`wss://noc8vp.us-east-vin.colyseus.net`);
 var options = {director:true, password: "papafrita"}
 
 const room = client.joinOrCreate("my_room", options).then(room => {
