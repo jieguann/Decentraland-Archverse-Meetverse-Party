@@ -109,8 +109,17 @@ connect("my_room").then((room) => {
   function lightingControl(fader: Entity, value: number) {
     if (value == 0) {
       fader.getComponent(GLTFShape).visible = false
-    } else if (value == 1) {
+    } else if (value > 0 && value <= 1) {
       fader.getComponent(GLTFShape).visible = true
+      if (0 < value && value <= 0.25){
+        fader.addComponentOrReplace(stageLightBlue)
+      } else if (0.25 < value && value <= 0.5) {
+        fader.addComponentOrReplace(stageLightGreen)
+      } else if (0.5 < value && value <= 0.75) {
+        fader.addComponentOrReplace(stageLightRed)
+      } else if (0.75 < value && value <= 1) {
+        fader.addComponentOrReplace(stageLightWhite)
+      }
     } else if (value > 1 && value < 2) {
       fader.getComponent(Transform).position.y = (value - 1.5) * 10 + 23
     } else if (value > 2 && value < 3) {
@@ -156,10 +165,10 @@ const stageLightGreen = new GLTFShape("models/beiwenquan/StageLightGreen.glb")
 const stageLightRed = new GLTFShape("models/beiwenquan/StageLightRed.glb")
 
 
-//osc entity for control
+//osc entity being controlled
 
 let fader1 = new Entity()
-fader1.addComponent(stageLightWhite)
+fader1.addComponent(stageLightBlue)
 fader1.addComponent(
   new Transform({
     position: new Vector3(342, 23, 84),
@@ -179,7 +188,7 @@ fader2.addComponent(
 engine.addEntity(fader2)
 
 let fader3 = new Entity()
-fader3.addComponent(stageLightGreen)
+fader3.addComponent(stageLightBlue)
 fader3.addComponent(
   new Transform({
     position: new Vector3(352, 23, 80),
@@ -189,7 +198,7 @@ fader3.addComponent(
 engine.addEntity(fader3)
 
 let fader4 = new Entity()
-fader4.addComponent(stageLightRed)
+fader4.addComponent(stageLightBlue)
 fader4.addComponent(
   new Transform({
     position: new Vector3(357, 23, 78),
