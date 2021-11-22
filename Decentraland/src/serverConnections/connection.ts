@@ -35,7 +35,7 @@ export async function connect(roomName: string, options: any = {}) {
      const ENDPOINT =  "wss://noc8vp.us-east-vin.colyseus.net" // local environment
 
 
-    addConnectionDebugger(ENDPOINT);
+    // addConnectionDebugger(ENDPOINT);
     const client = new Client(ENDPOINT);
 
     try {
@@ -73,6 +73,6 @@ function updateConnectionMessage(value: string, color: Color4) {
 }
 
 function updateConnectionDebugger(room: Room) {
-    updateConnectionMessage("Connected.", Color4.Green());
+    // updateConnectionMessage("Connected.", Color4.Green());
     room.onLeave(() => updateConnectionMessage("Connection lost", Color4.Red()));
 }

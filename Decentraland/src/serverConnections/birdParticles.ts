@@ -1,10 +1,12 @@
 import * as utils from '@dcl/ecs-scene-utils';
-import { randomDirection } from "../utils";
+import { randomInt, isValidKey, randomDirection } from "../utils";
 import resourse from '../resourse';
 import { CollidedData } from './gameplay';
 
-const birdScale = new Vector3(0.5, 0.5, 0.5);
-let birdShape = resourse.particles.bird;
+// const birdScale = new Vector3(0.5, 0.5, 0.5);
+// let birdShape = resourse.particles.bird;
+const particles = resourse.particles;
+const birdScale = new Vector3(0.15, 0.15, 0.15);
 
 export class SpawnBird{
     private position: CollidedData;
@@ -38,6 +40,15 @@ function newBird(position: CollidedData, clip: any, count: number) {
             scale: birdScale
         })
     );
+
+    let birdShape: any = null;
+    const particlesKeys = Object.keys(particles);
+    const randmomNum = randomInt(0, particlesKeys.length -1);
+    const key = particlesKeys[randmomNum];
+    if(isValidKey(key, particles)) {
+        birdShape = particles[key];
+    }
+
     bird.addComponent(birdShape);
     const nextPos = new Vector3(
         position.x + Math.random() * 8 * randomDirection(),

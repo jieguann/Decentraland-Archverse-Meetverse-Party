@@ -16,7 +16,6 @@ export interface CollidedData{
 const randomSound = resources.randomSound;
 
 connect("my_room").then((room) => {
-  log("Connected!");
   const sendMessageEntity = new Entity()
   // 当前客户端玩家的Id
   const roomSessionId = room.sessionId;

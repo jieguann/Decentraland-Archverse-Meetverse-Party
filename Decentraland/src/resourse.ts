@@ -79,15 +79,9 @@ for(const key in randomSoundPaths) {
 export default {
     randomSound: randomSound,
     particles: {
-        particles1: new Texture("materials/particles/1.png", { hasAlpha: true, samplingMode: 1}),
-        particles2: new Texture("materials/particles/2.png", { hasAlpha: true, samplingMode: 1}),
-        particles3: new Texture("materials/particles/3.png", { hasAlpha: true, samplingMode: 1}),
-        particles4: new Texture("materials/particles/4.png", { hasAlpha: true, samplingMode: 1}),
-        particles5: new Texture("materials/particles/5.png", { hasAlpha: true, samplingMode: 1}),
-        particles6: new Texture("materials/particles/6.png", { hasAlpha: true, samplingMode: 1}),
-        particles7: new Texture("materials/particles/7.png", { hasAlpha: true, samplingMode: 1}),
-        particles8: new Texture("materials/particles/8.png", { hasAlpha: true, samplingMode: 1}),
-        particles9: new Texture("materials/particles/9.png", { hasAlpha: true, samplingMode: 1}),
-        bird: new GLTFShape("models/particles/test.glb"),
-    }
+        particles1: new GLTFShape("models/particles/monster1.glb"),
+        particles2: new GLTFShape("models/particles/monster2.glb"),
+        particles3: new GLTFShape("models/particles/monster3.glb"),
+    },
+    bird: new GLTFShape("models/particles/star.glb"),
 }
