@@ -88,6 +88,6 @@ export default {
         particles7: new Texture("materials/particles/7.png", { hasAlpha: true, samplingMode: 1}),
         particles8: new Texture("materials/particles/8.png", { hasAlpha: true, samplingMode: 1}),
         particles9: new Texture("materials/particles/9.png", { hasAlpha: true, samplingMode: 1}),
-        bird: new GLTFShape("models/particles/star.glb"),
+        bird: new GLTFShape("models/particles/test.glb"),
     }
 }
