@@ -105,20 +105,50 @@ connect("my_room").then((room) => {
   }
 
   //OSC message Control
+  function lightingControl(fader: Entity, value: number) {
+    if (value == 0) {
+      fader.getComponent(GLTFShape).visible = false
+    } else if (value > 0 && value <= 1) {
+      fader.getComponent(GLTFShape).visible = true
+      if (0 < value && value <= 0.25){
+        fader.addComponentOrReplace(stageLightBlue)
+      } else if (0.25 < value && value <= 0.5) {
+        fader.addComponentOrReplace(stageLightGreen)
+      } else if (0.5 < value && value <= 0.75) {
+        fader.addComponentOrReplace(stageLightRed)
+      } else if (0.75 < value && value <= 1) {
+        fader.addComponentOrReplace(stageLightWhite)
+      }
+    } else if (value > 1 && value < 2) {
+      fader.getComponent(Transform).position.y = (value - 1.5) * 10 + 23
+    } else if (value > 2 && value < 3) {
+      fader.getComponent(Transform).rotation.setEuler(30 + (value - 2.5) * 90, 50 - 180, 0)
+    } else if (value > 3 && value < 4) {
+      fader.getComponent(Transform).rotation.setEuler(30, (50 + (value - 3.5) * 90 - 180), 0) 
+    } else if (value == 10){
+      fader.addComponentOrReplace(stageLightWhite)
+    } else if (value == 11){
+      fader.addComponentOrReplace(stageLightBlue)
+    } else if (value == 12){
+      fader.addComponentOrReplace(stageLightGreen)
+    } else if (value == 13){
+      fader.addComponentOrReplace(stageLightRed)
+    }
+  }
   room.state.listen('fader1', (value: number) => {
-    fader1.getComponent(Transform).position.y = value * 1
+    lightingControl(fader1, value)
   })
 
   room.state.listen('fader2', (value: number) => {
-    fader2.getComponent(Transform).position.z = value * 1 + 8
+    lightingControl(fader2, value)
   })
 
   room.state.listen('fader3', (value: number) => {
-    fader3.getComponent(Transform).position.y = value * 0.1
+    lightingControl(fader3, value)
   })
 
   room.state.listen('fader4', (value: number) => {
-    fader4.getComponent(Transform).position.y = value * 1
+    lightingControl(fader4, value)
   })
 
 }).catch((err) => {
@@ -126,48 +156,52 @@ connect("my_room").then((room) => {
 
 });
 
-//osc entity for control
-let greenMaterial = new Material()
-greenMaterial.albedoColor = Color4.Green()
+// Stage light models in different colors
 
-let yellowMaterial = new Material()
-yellowMaterial.albedoColor = Color4.Yellow()
+const stageLightWhite = new GLTFShape("models/beiwenquan/StageLightWhite.glb")
+const stageLightBlue = new GLTFShape("models/beiwenquan/StageLightBlue.glb")
+const stageLightGreen = new GLTFShape("models/beiwenquan/StageLightGreen.glb")
+const stageLightRed = new GLTFShape("models/beiwenquan/StageLightRed.glb")
 
-let redMaterial = new Material()
-redMaterial.albedoColor = Color4.Red()
+
+//osc entity being controlled
 
 let fader1 = new Entity()
-fader1.addComponent(new GLTFShape("models/qingliangting-roof.gltf"))
+fader1.addComponent(stageLightBlue)
 fader1.addComponent(
   new Transform({
-    position: new Vector3(8, 2, 8),
+    position: new Vector3(342, 23, 84),
+    rotation: Quaternion.Euler(30, 50-180, 0)
   })
 )
 engine.addEntity(fader1)
 
 let fader2 = new Entity()
-fader2.addComponent(new GLTFShape("models/qingliangting-wall.gltf"))
+fader2.addComponent(stageLightBlue)
 fader2.addComponent(
   new Transform({
-    position: new Vector3(8, 0, 8),
+    position: new Vector3(347, 23, 82),
+    rotation: Quaternion.Euler(30, 50-180, 0)
   })
 )
 engine.addEntity(fader2)
 
 let fader3 = new Entity()
-fader3.addComponent(new GLTFShape("models/qingliangting-structure.gltf"))
+fader3.addComponent(stageLightBlue)
 fader3.addComponent(
   new Transform({
-    position: new Vector3(8, 0, 8),
+    position: new Vector3(352, 23, 80),
+    rotation: Quaternion.Euler(30, 50-180, 0)
   })
 )
 engine.addEntity(fader3)
 
 let fader4 = new Entity()
-fader4.addComponent(new BoxShape())
+fader4.addComponent(stageLightBlue)
 fader4.addComponent(
   new Transform({
-    position: new Vector3(8, 0, 16),
+    position: new Vector3(357, 23, 78),
+    rotation: Quaternion.Euler(30, 50-180, 0)
   })
 )
 engine.addEntity(fader4)
