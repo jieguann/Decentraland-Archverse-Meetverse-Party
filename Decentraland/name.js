@@ -5,7 +5,7 @@ var path = require("path");
 var fs = require("fs");
 const { dir } = require("console");
 
-var pathName = "sounds/random/sampling";
+var pathName = "sounds/random/piano";
 
 fs.readdir(pathName, function(err, files) {
     var dirs = {};
