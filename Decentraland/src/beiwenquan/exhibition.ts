@@ -14,7 +14,7 @@ export class Exhibition extends Entity {
     myMaterial.transparencyMode = 4
     this.addComponent(myMaterial)
     this.addComponent(transform)
-    let gameOver = new ui.CenterImage(image, 8, true, 0, 0, 1025, 300, {
+    let gameOver = new ui.CenterImage(image, 8, true, 0, 0, 1000, 300, {
       sourceHeight: 1251,
       sourceWidth: 4167,
       sourceLeft: 0,
@@ -28,7 +28,6 @@ export class Exhibition extends Entity {
         { button: ActionButton.POINTER, showFeedback: false, hoverText: "Hold to view details, release to close." }
       )
     )
-
     this.addComponent(
       new OnPointerUp(
         (e) => {
