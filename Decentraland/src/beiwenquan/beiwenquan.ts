@@ -489,7 +489,7 @@ export function beiwenquan(): void {
         new Transform({
             position: new Vector3(196.44, 40.712, 155.65),
             scale: new Vector3(38.4, 21.6, 1),
-            rotation: Quaternion.Euler(0, 20 + 180, 0)
+            rotation: Quaternion.Euler(0, -20 + 180, 0)
         })
     )
     screen1.addComponent(myMaterial)
