@@ -110,14 +110,7 @@ export function beiwenquan(): void {
         position: new Vector3(0, 0, 0)
     }))
 
-    //地面
-    const Ground = new Entity();
-    engine.addEntity(Ground);
-    Ground.addComponent(new GLTFShape("models/beiwenquan/Ground.glb"));
-    Ground.addComponent(new Transform({
-        rotation: Quaternion.Euler(0, 180, 0),
-        position: new Vector3(0, 0, 0)
-    }))
+
 
     //舞台
     const Stage = new Entity();
