@@ -50,9 +50,9 @@
       "name": "spawn1",
       "default": true,
       "position": {
-        "x": 200,
-        "y": 10,
-        "z": 5
+        "x": 176.28,
+        "y": 28.25,
+        "z": 116.71
       },
       "cameraTarget": {
         "x": 220,
