@@ -3,8 +3,16 @@ import * as utils from '@dcl/ecs-scene-utils'
 import "./serverConnections/gameplay";
 import { BeiBei } from './beibei/beibei'
 import { beiwenquan } from './beiwenquan/beiwenquan'
-//北碚代码
 
+
+//北温泉地面
+const Ground = new Entity();
+engine.addEntity(Ground);
+Ground.addComponent(new GLTFShape("models/beiwenquan/Ground.glb"));
+Ground.addComponent(new Transform({
+  rotation: Quaternion.Euler(0, 180, 0),
+  position: new Vector3(0, 0, 0)
+}))
 //检查时间 
 async function checkTime() {
   let url = 'https://worldtimeapi.org/api/timezone/etc/gmt'
@@ -18,12 +26,12 @@ async function checkTime() {
 
     if (a % 2) {
       beiwenquan()
-      
+
       NewYearTimeChecker.removeComponent(utils.Interval)
       engine.removeEntity(NewYearTimeChecker)
     } else {
       beiwenquan()
-      
+
       NewYearTimeChecker.removeComponent(utils.Interval)
       engine.removeEntity(NewYearTimeChecker)
     }
