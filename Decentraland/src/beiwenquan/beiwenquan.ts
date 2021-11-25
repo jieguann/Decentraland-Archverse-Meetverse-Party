@@ -102,10 +102,24 @@ export function beiwenquan(): void {
     }))
 
     //环境
-    const Enviroment = new Entity();
-    engine.addEntity(Enviroment);
-    Enviroment.addComponent(new GLTFShape("models/beiwenquan/Enviroment.glb"));
-    Enviroment.addComponent(new Transform({
+    const tree1 = new Entity();
+    engine.addEntity(tree1);
+    tree1.addComponent(new GLTFShape("models/beiwenquan/tree1.glb"));
+    tree1.addComponent(new Transform({
+        rotation: Quaternion.Euler(0, 180, 0),
+        position: new Vector3(0, 0, 0)
+    }))
+    const tree2 = new Entity();
+    engine.addEntity(tree2);
+    tree2.addComponent(new GLTFShape("models/beiwenquan/tree2.glb"));
+    tree2.addComponent(new Transform({
+        rotation: Quaternion.Euler(0, 180, 0),
+        position: new Vector3(0, 0, 0)
+    }))
+    const tree3 = new Entity();
+    engine.addEntity(tree3);
+    tree3.addComponent(new GLTFShape("models/beiwenquan/tree3.glb"));
+    tree3.addComponent(new Transform({
         rotation: Quaternion.Euler(0, 180, 0),
         position: new Vector3(0, 0, 0)
     }))
@@ -473,37 +487,13 @@ export function beiwenquan(): void {
     screen1.addComponent(new PlaneShape())
     screen1.addComponent(
         new Transform({
-            position: new Vector3(329.753, 22.1211, 86.8465),
-            scale: new Vector3(19.8, 11.1375, 1),
-            rotation: Quaternion.Euler(0, 39.1 - 180, 0)
+            position: new Vector3(196.44, 40.712, 155.65),
+            scale: new Vector3(38.4, 21.6, 1),
+            rotation: Quaternion.Euler(0, 20 + 180, 0)
         })
     )
     screen1.addComponent(myMaterial)
     engine.addEntity(screen1)
 
-    //1.左屏幕
-    const screen2 = new Entity()
-    screen2.addComponent(new PlaneShape())
-    screen2.addComponent(
-        new Transform({
-            position: new Vector3(316.8, 14.531, 93.962),
-            scale: new Vector3(14.6, 8.22, 1),
-            rotation: Quaternion.Euler(0, -180, 0)
-        })
-    )
-    screen2.addComponent(myMaterial)
-    engine.addEntity(screen2)
 
-    //1.右屏幕
-    const screen3 = new Entity()
-    screen3.addComponent(new PlaneShape())
-    screen3.addComponent(
-        new Transform({
-            position: new Vector3(334.40, 14.531, 72.525),
-            scale: new Vector3(14.6, 8.22, 1),
-            rotation: Quaternion.Euler(0, 70 - 141, 0)
-        })
-    )
-    screen3.addComponent(myMaterial)
-    engine.addEntity(screen3)
 }
