@@ -3,9 +3,9 @@ import { movePlayerTo } from '@decentraland/RestrictedActions'
 import * as ui from '@dcl/ui-scene-utils'
 
 import { Exhibition } from 'src/beiwenquan/exhibition'
-import { exhibition_image_A1, exhibition_image_A2, exhibition_image_A3, exhibition_image_A4 } from 'src/beiwenquan/exhibiton_image'
-import { exhibition_texture_A1, exhibition_texture_A2, exhibition_texture_A3, exhibition_texture_A4 } from 'src/beiwenquan/exhibition_texture'
-import { exhibition_transform_A1, exhibition_transform_A2, exhibition_transform_A3, exhibition_transform_A4 } from 'src/beiwenquan/exhibition_transform'
+import { exhibition_image_A1, exhibition_image_A2, exhibition_image_A3, exhibition_image_A4, exhibition_image_A6, exhibition_image_A9, exhibition_image_A10 } from 'src/beiwenquan/exhibiton_image'
+import { exhibition_texture_A1, exhibition_texture_A2, exhibition_texture_A3, exhibition_texture_A4, exhibition_texture_A6, exhibition_texture_A9, exhibition_texture_A10 } from 'src/beiwenquan/exhibition_texture'
+import { exhibition_transform_A1, exhibition_transform_A2, exhibition_transform_A3, exhibition_transform_A4, exhibition_transform_A6, exhibition_transform_A9, exhibition_transform_A10 } from 'src/beiwenquan/exhibition_transform'
 
 
 
@@ -436,11 +436,31 @@ export function beiwenquan(): void {
         engine.addEntity(exhibitionwork3)
     }
 
-    //A3展品
+    //A4展品
     for (let i = 0; i < exhibition_texture_A4.length; i++) {
         const exhibitionwork4 = new Exhibition(exhibition_texture_A4[i], exhibition_transform_A4[i], exhibition_image_A4[i])
         engine.addEntity(exhibitionwork4)
     }
+
+    //A6展品
+    for (let i = 0; i < exhibition_texture_A6.length; i++) {
+        const exhibitionwork6 = new Exhibition(exhibition_texture_A6[i], exhibition_transform_A6[i], exhibition_image_A6[i])
+        engine.addEntity(exhibitionwork6)
+    }
+
+    //A9展品
+    for (let i = 0; i < exhibition_texture_A9.length; i++) {
+        const exhibitionwork9 = new Exhibition(exhibition_texture_A9[i], exhibition_transform_A9[i], exhibition_image_A9[i])
+        engine.addEntity(exhibitionwork9)
+    }
+
+    //A10展品
+    for (let i = 0; i < exhibition_texture_A10.length; i++) {
+        const exhibitionwork10 = new Exhibition(exhibition_texture_A10[i], exhibition_transform_A10[i], exhibition_image_A10[i])
+        engine.addEntity(exhibitionwork10)
+    }
+
+
 
 
     //视频
