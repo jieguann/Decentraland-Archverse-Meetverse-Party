@@ -64,7 +64,8 @@ function addConnectionDebugger(endpoint: string) {
     message.hTextAlign = "center";
     message.vAlign = "bottom"
     message.positionX = -80
-    updateConnectionMessage(`Connecting to ${endpoint}`, Color4.White());
+    //updateConnectionMessage(`Connecting to ${endpoint}`, Color4.White());
+    updateConnectionMessage(`Connecting to Server`, Color4.White());
 }
 
 function updateConnectionMessage(value: string, color: Color4) {
