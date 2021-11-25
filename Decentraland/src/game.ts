@@ -3,6 +3,7 @@ import * as utils from '@dcl/ecs-scene-utils'
 import "./serverConnections/gameplay";
 import { BeiBei } from './beibei/beibei'
 import { beiwenquan } from './beiwenquan/beiwenquan'
+import { Dispenser } from './dispenser'
 
 
 //北温泉地面
@@ -46,3 +47,26 @@ NewYearTimeChecker.addComponent(
     checkTime()
   })
 )
+
+
+// POAP BOOTH
+
+let POAPBooth = new Dispenser(
+  {
+    position: new Vector3(192.34, 27.535, 120.23),
+  },
+  '14799'
+)
+
+// MAKE POAP BOOTH MULTIPLAYER
+
+export let sceneMessageBus = new MessageBus()
+
+sceneMessageBus.on('activatePoap', () => {
+  POAPBooth.activate()
+})
+
+// POAP BOOTH
+
+
+

@@ -450,10 +450,10 @@ export function beiwenquan(): void {
     }
 
     //A6展品
-    for (let i = 0; i < exhibition_texture_A6.length; i++) {
-        const exhibitionwork6 = new Exhibition(exhibition_texture_A6[i], exhibition_transform_A6[i], exhibition_image_A6[i])
-        engine.addEntity(exhibitionwork6)
-    }
+    // for (let i = 0; i < exhibition_texture_A6.length; i++) {
+    //     const exhibitionwork6 = new Exhibition(exhibition_texture_A6[i], exhibition_transform_A6[i], exhibition_image_A6[i])
+    //     engine.addEntity(exhibitionwork6)
+    // }
 
     //A9展品
     for (let i = 0; i < exhibition_texture_A9.length; i++) {
@@ -494,6 +494,8 @@ export function beiwenquan(): void {
     )
     screen1.addComponent(myMaterial)
     engine.addEntity(screen1)
+
+    
 
 
 }
