@@ -4,7 +4,10 @@ import * as utils from '@dcl/ecs-scene-utils'
 // UI utils
 import * as ui from '@dcl/ui-scene-utils'
 
-let exhibition_image:string[]=[
+
+
+
+let exhibition_image_A1: string[] = [
     "images/exhibition/A1/1A-1-1.jpg",
     "images/exhibition/A1/1A-1-2.jpg",
     "images/exhibition/A1/1A-3-1.jpg",
@@ -67,4 +70,104 @@ let exhibition_image:string[]=[
     "images/exhibition/A1/1C-6-3.jpg",
     "images/exhibition/A1/1C-7-1.jpg",
 ]
-export {exhibition_image}
+
+
+
+
+
+
+
+let exhibition_image_A2: string[] = [
+    "images/exhibition/A2/2A-1-1.jpg",
+    "images/exhibition/A2/2A-3-1.jpg",
+    "images/exhibition/A2/2A-5-1.jpg",
+    "images/exhibition/A2/2A-6-1.jpg",
+    "images/exhibition/A2/2A-6-2.jpg",
+    "images/exhibition/A2/2A-8-1.jpg",
+    "images/exhibition/A2/2A-9-1.jpg",
+    "images/exhibition/A2/2A-9-2.jpg",
+    "images/exhibition/A2/2A-9-3.jpg",
+    "images/exhibition/A2/2A-9-4.jpg",
+    "images/exhibition/A2/2A-11-1.jpg",
+    "images/exhibition/A2/2A-13-1.jpg",
+    "images/exhibition/A2/2A-14-1.jpg",
+    "images/exhibition/A2/2A-14-2.jpg",
+    "images/exhibition/A2/2A-15-1.jpg",
+    "images/exhibition/A2/2A-17-1.jpg",
+    "images/exhibition/A2/2A-20-1.jpg",
+    "images/exhibition/A2/2A-22-1.jpg",
+    "images/exhibition/A2/2B-1-1.jpg",
+    "images/exhibition/A2/2B-3-1.jpg",
+    "images/exhibition/A2/2B-5-1.jpg",
+    "images/exhibition/A2/2B-6-1.jpg",
+    "images/exhibition/A2/2B-6-2.jpg",
+    "images/exhibition/A2/2B-8-1.jpg",
+    "images/exhibition/A2/2B-9-1.jpg",
+    "images/exhibition/A2/2B-9-2.jpg",
+    "images/exhibition/A2/2B-9-3.jpg",
+    "images/exhibition/A2/2B-9-4.jpg",
+    "images/exhibition/A2/2B-11-1.jpg",
+    "images/exhibition/A2/2B-13-1.jpg",
+    "images/exhibition/A2/2B-14-1.jpg",
+    "images/exhibition/A2/2B-14-2.jpg",
+    "images/exhibition/A2/2B-15-1.jpg",
+    "images/exhibition/A2/2B-17-1.jpg",
+    "images/exhibition/A2/2B-20-1.jpg",
+    "images/exhibition/A2/2B-22-1.jpg",
+    "images/exhibition/A2/2C-1-1.jpg",
+    "images/exhibition/A2/2C-3-1.jpg",
+    "images/exhibition/A2/2C-5-1.jpg",
+    "images/exhibition/A2/2C-6-1.jpg",
+    "images/exhibition/A2/2C-6-2.jpg",
+    "images/exhibition/A2/2C-8-1.jpg",
+    "images/exhibition/A2/2C-9-1.jpg",
+    "images/exhibition/A2/2C-9-2.jpg",
+    "images/exhibition/A2/2C-9-3.jpg",
+    "images/exhibition/A2/2C-9-4.jpg",
+    "images/exhibition/A2/2C-11-1.jpg",
+    "images/exhibition/A2/2C-13-1.jpg",
+    "images/exhibition/A2/2C-14-1.jpg",
+    "images/exhibition/A2/2C-14-2.jpg",
+    "images/exhibition/A2/2C-15-1.jpg",
+    "images/exhibition/A2/2C-17-1.jpg",
+    "images/exhibition/A2/2C-20-1.jpg",
+    "images/exhibition/A2/2C-22-1.jpg",
+]
+
+
+
+
+let exhibition_image_A3: string[] = [
+    "images/exhibition/A3/3A-2-1.jpg",
+    "images/exhibition/A3/3A-3-1.jpg",
+    "images/exhibition/A3/3A-3-2.jpg",
+    "images/exhibition/A3/3A-5-1.jpg",
+    "images/exhibition/A3/3A-5-2.jpg",
+    "images/exhibition/A3/3A-5-4.jpg",
+    "images/exhibition/A3/3A-6-1.jpg",
+    "images/exhibition/A3/3A-6-2.jpg",
+    "images/exhibition/A3/3A-6-4.jpg",
+    "images/exhibition/A3/3A-8-1.jpg",
+    "images/exhibition/A3/3A-9-1.jpg",
+    "images/exhibition/A3/3A-9-2.jpg",
+    "images/exhibition/A3/3A-9-3.jpg",
+    "images/exhibition/A3/3A-9-4.jpg",
+    "images/exhibition/A3/3A-10-1.jpg",
+]
+
+
+
+let exhibition_image_A4: string[] = [
+    "images/exhibition/A4/4A-1-1.jpg",
+    "images/exhibition/A4/4A-2-1.jpg",
+    "images/exhibition/A4/4A-3-1.jpg",
+    "images/exhibition/A4/4A-4-1.jpg",
+    "images/exhibition/A4/4A-7-1.jpg",
+    "images/exhibition/A4/4A-8-1.jpg",
+    "images/exhibition/A4/4A-8-2.jpg",
+    "images/exhibition/A4/4A-9-1.jpg",
+    "images/exhibition/A4/4A-10-1.jpg",
+    "images/exhibition/A4/4A-10-2.jpg",
+]
+
+export { exhibition_image_A1, exhibition_image_A2, exhibition_image_A3, exhibition_image_A4 }
