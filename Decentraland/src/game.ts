@@ -49,22 +49,21 @@ NewYearTimeChecker.addComponent(
 )
 
 
-// POAP BOOTH
+export let sceneMessageBus = new MessageBus();
 
 let POAPBooth = new Dispenser(
   {
     position: new Vector3(192.34, 27.535, 120.23),
+    rotation: Quaternion.Euler(0, 0, 0),
   },
-  '14799'
-)
+  "poapapi.dcl.guru",
+  "14799"
+);
 
-// MAKE POAP BOOTH MULTIPLAYER
+sceneMessageBus.on("activatePoap", () => {
+  POAPBooth.activate();
+});
 
-export let sceneMessageBus = new MessageBus()
-
-sceneMessageBus.on('activatePoap', () => {
-  POAPBooth.activate()
-})
 
 
 
