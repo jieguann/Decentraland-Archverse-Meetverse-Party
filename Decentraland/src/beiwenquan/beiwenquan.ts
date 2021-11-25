@@ -147,7 +147,7 @@ export function beiwenquan(): void {
         position: new Vector3(29.7772, 55.8951, 136.61)
     }))
 
-    let A1_1F_UPtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A1_1F_UPtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A1_1F_UP.addComponent(
         new utils.TriggerComponent(
             A1_1F_UPtriggerSphere, //shape
@@ -169,7 +169,7 @@ export function beiwenquan(): void {
         position: new Vector3(33.4393, 60.0117, 137.901)
     }))
 
-    let A1_2F_UPtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A1_2F_UPtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A1_2F_UP.addComponent(
         new utils.TriggerComponent(
             A1_2F_UPtriggerSphere, //shape
@@ -192,7 +192,7 @@ export function beiwenquan(): void {
         position: new Vector3(26.5654, 60.3164, 134.406)
     }))
 
-    let A1_2F_DOWNtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A1_2F_DOWNtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A1_1F_DOWN.addComponent(
         new utils.TriggerComponent(
             A1_2F_DOWNtriggerSphere, //shape
@@ -214,7 +214,7 @@ export function beiwenquan(): void {
         position: new Vector3(29.896, 64.1093, 136.609)
     }))
 
-    let A1_3F_DOWNtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A1_3F_DOWNtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A1_3F_DOWN.addComponent(
         new utils.TriggerComponent(
             A1_3F_DOWNtriggerSphere, //shape
@@ -237,7 +237,7 @@ export function beiwenquan(): void {
         position: new Vector3(248.315, 42.8379, 179.628)
     }))
 
-    let A3_1F_UPtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A3_1F_UPtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A3_1F_UP.addComponent(
         new utils.TriggerComponent(
             A3_1F_UPtriggerSphere, //shape
@@ -259,7 +259,7 @@ export function beiwenquan(): void {
         position: new Vector3(251.033, 45.5625, 181.172)
     }))
 
-    let A3_2F_UPtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A3_2F_UPtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A3_2F_UP.addComponent(
         new utils.TriggerComponent(
             A3_2F_UPtriggerSphere, //shape
@@ -282,7 +282,7 @@ export function beiwenquan(): void {
         position: new Vector3(247.792, 45.5154, 179.671)
     }))
 
-    let A3_2F_DOWNtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A3_2F_DOWNtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A3_1F_DOWN.addComponent(
         new utils.TriggerComponent(
             A3_2F_DOWNtriggerSphere, //shape
@@ -304,7 +304,7 @@ export function beiwenquan(): void {
         position: new Vector3(247.792, 48.2501, 179.671)
     }))
 
-    let A3_3F_DOWNtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A3_3F_DOWNtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A3_3F_DOWN.addComponent(
         new utils.TriggerComponent(
             A3_3F_DOWNtriggerSphere, //shape
@@ -326,13 +326,13 @@ export function beiwenquan(): void {
         position: new Vector3(273.906, 43.3342, 258.708)
     }))
 
-    let A6_1F_UPtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A6_1F_UPtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A6_1F_UP.addComponent(
         new utils.TriggerComponent(
             A6_1F_UPtriggerSphere, //shape
             {
                 onCameraEnter: () => {
-                    movePlayerTo(new Vector3(273.861, 47.9227, 265.337))
+                    movePlayerTo(new Vector3(273.877, 48.8999, 251.804))
                     ui.displayAnnouncement('2F', 5, Color4.Red(), 50, true)
                 }
             }
@@ -348,7 +348,7 @@ export function beiwenquan(): void {
         position: new Vector3(273.906, 48.0008, 258.708)
     }))
 
-    let A6_2F_UPtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A6_2F_UPtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A6_2F_UP.addComponent(
         new utils.TriggerComponent(
             A6_2F_UPtriggerSphere, //shape
@@ -371,7 +371,7 @@ export function beiwenquan(): void {
         position: new Vector3(273.861, 47.9537, 251.742)
     }))
 
-    let A6_2F_DOWNtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A6_2F_DOWNtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A6_1F_DOWN.addComponent(
         new utils.TriggerComponent(
             A6_2F_DOWNtriggerSphere, //shape
@@ -393,13 +393,13 @@ export function beiwenquan(): void {
         position: new Vector3(273.861, 52.81, 251.742)
     }))
 
-    let A6_3F_DOWNtriggerSphere = new utils.TriggerSphereShape(1.8)
+    let A6_3F_DOWNtriggerSphere = new utils.TriggerSphereShape(0.5, new Vector3(0, 1.5, 0))
     A6_3F_DOWN.addComponent(
         new utils.TriggerComponent(
             A6_3F_DOWNtriggerSphere, //shape
             {
                 onCameraEnter: () => {
-                    movePlayerTo(new Vector3(273.861, 47.9227, 265.337))
+                    movePlayerTo(new Vector3(273.877, 48.8999, 251.804))
                     ui.displayAnnouncement('2F', 5, Color4.Red(), 50, true)
                 }
             }
