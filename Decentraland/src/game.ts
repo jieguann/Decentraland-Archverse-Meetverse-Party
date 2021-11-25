@@ -66,7 +66,7 @@ sceneMessageBus.on('activatePoap', () => {
   POAPBooth.activate()
 })
 
-// POAP BOOTH
+
 
 
 

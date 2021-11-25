@@ -188,7 +188,7 @@ let exhibition_transform_A6: Transform[] = [
     new Transform({ position: new Vector3(274.777, 45.5, 238.68), rotation: Quaternion.Euler(180, -180 + 180, 0), scale: new Vector3(2, 2, 2) }),
     new Transform({ position: new Vector3(271.461, 45.5, 238.68), rotation: Quaternion.Euler(180, -180 + 180, 0), scale: new Vector3(2, 2, 2) }),
     new Transform({ position: new Vector3(267.399, 45.5, 249.315), rotation: Quaternion.Euler(180, -90 + 180, 0), scale: new Vector3(2, 2, 2) }),
-    new Transform({ position: new Vector3(267.399, 45.5, 255.095), rotation: Quaternion.Euler(180, -90 + 180, 0), scale: new Vector3(2, 2, 2) }),
+    // new Transform({ position: new Vector3(267.399, 45.5, 255.095), rotation: Quaternion.Euler(180, -90 + 180, 0), scale: new Vector3(2, 2, 2) }),
     new Transform({ position: new Vector3(267.399, 45.5, 260.65), rotation: Quaternion.Euler(180, -90 + 180, 0), scale: new Vector3(2, 2, 2) }),
     new Transform({ position: new Vector3(267.298, 45.5, 270.831), rotation: Quaternion.Euler(180, 0 + 180, 0), scale: new Vector3(2, 2, 2) }),
     new Transform({ position: new Vector3(272.215, 45.5, 270.831), rotation: Quaternion.Euler(180, 0 + 180, 0), scale: new Vector3(2, 2, 2) }),

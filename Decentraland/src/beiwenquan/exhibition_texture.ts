@@ -188,7 +188,7 @@ let exhibition_texture_A6: Texture[] = [
     new Texture("https://dl.dropbox.com/s/hzsjx25tgb220kc/6A-4-3.png"),
     new Texture("https://dl.dropbox.com/s/jq7fk61bgexo3od/6A-4-4.png"),
     new Texture("https://dl.dropbox.com/s/tijesgbcybyytph/6A-7-1.png"),
-    new Texture("https://dl.dropbox.com/s/wml0d5sl1e1l8ja/6A-7-2.png"),
+    // new Texture("https://dl.dropbox.com/s/wml0d5sl1e1l8ja/6A-7-2.png"),
     new Texture("https://dl.dropbox.com/s/7c2wqoo3d4grlmq/6A-7-3.png"),
     new Texture("https://dl.dropbox.com/s/wmf30iogzli6816/6A-10-1.png"),
     new Texture("https://dl.dropbox.com/s/9prm9b8yqdw5lld/6A-10-2.png"),

@@ -6,6 +6,8 @@ import { Exhibition } from 'src/beiwenquan/exhibition'
 import { exhibition_image_A1, exhibition_image_A2, exhibition_image_A3, exhibition_image_A4, exhibition_image_A6, exhibition_image_A9, exhibition_image_A10 } from 'src/beiwenquan/exhibiton_image'
 import { exhibition_texture_A1, exhibition_texture_A2, exhibition_texture_A3, exhibition_texture_A4, exhibition_texture_A6, exhibition_texture_A9, exhibition_texture_A10 } from 'src/beiwenquan/exhibition_texture'
 import { exhibition_transform_A1, exhibition_transform_A2, exhibition_transform_A3, exhibition_transform_A4, exhibition_transform_A6, exhibition_transform_A9, exhibition_transform_A10 } from 'src/beiwenquan/exhibition_transform'
+import { ExhibitionVideos } from 'src/beiwenquan/videos'
+import { exhibitionVideo, exhibitionVideo_transform } from 'src/beiwenquan/video_attributes'
 
 
 
@@ -135,26 +137,6 @@ export function beiwenquan(): void {
         position: new Vector3(0, 0, 0)
     }))
 
-    //水面传送到船
-    const BoatStageConveyor = new Entity();
-    engine.addEntity(BoatStageConveyor);
-    BoatStageConveyor.addComponent(new GLTFShape("models/beiwenquan/BoatStageConveyor.glb"));
-    BoatStageConveyor.addComponent(new Transform({
-        rotation: Quaternion.Euler(0, 180, 0),
-        position: new Vector3(0, 0, 0)
-    }))
-
-    let BoatTriggerSphere = new utils.TriggerSphereShape(8, new Vector3(255.192, 0.95, 88.7549))
-    BoatStageConveyor.addComponent(
-        new utils.TriggerComponent(
-            BoatTriggerSphere, //shape
-            {
-                onCameraEnter: () => {
-                    movePlayerTo(new Vector3(307.545, 60, 48.0286))
-                }
-            }
-        )
-    )
 
     //A1一楼到二楼
     const A1_1F_UP = new Entity();
@@ -450,10 +432,10 @@ export function beiwenquan(): void {
     }
 
     //A6展品
-    // for (let i = 0; i < exhibition_texture_A6.length; i++) {
-    //     const exhibitionwork6 = new Exhibition(exhibition_texture_A6[i], exhibition_transform_A6[i], exhibition_image_A6[i])
-    //     engine.addEntity(exhibitionwork6)
-    // }
+    for (let i = 0; i < exhibition_texture_A6.length; i++) {
+        const exhibitionwork6 = new Exhibition(exhibition_texture_A6[i], exhibition_transform_A6[i], exhibition_image_A6[i])
+        engine.addEntity(exhibitionwork6)
+    }
 
     //A9展品
     for (let i = 0; i < exhibition_texture_A9.length; i++) {
@@ -465,6 +447,12 @@ export function beiwenquan(): void {
     for (let i = 0; i < exhibition_texture_A10.length; i++) {
         const exhibitionwork10 = new Exhibition(exhibition_texture_A10[i], exhibition_transform_A10[i], exhibition_image_A10[i])
         engine.addEntity(exhibitionwork10)
+    }
+
+    //video
+    for (let i = 0; i < exhibitionVideo.length; i++) {
+        const exhibitionVideowork = new ExhibitionVideos(exhibitionVideo[i], exhibitionVideo_transform[i])
+        engine.addEntity(exhibitionVideowork)
     }
 
 
@@ -495,7 +483,7 @@ export function beiwenquan(): void {
     screen1.addComponent(myMaterial)
     engine.addEntity(screen1)
 
-    
+
 
 
 }

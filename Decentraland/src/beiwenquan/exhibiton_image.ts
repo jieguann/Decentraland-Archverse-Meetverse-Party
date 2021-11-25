@@ -188,7 +188,7 @@ let exhibition_image_A6: string[] = [
     "images/exhibition/A6/6A-4-3.jpg",
     "images/exhibition/A6/6A-4-4.jpg",
     "images/exhibition/A6/6A-7-1.jpg",
-    "images/exhibition/A6/6A-7-2.jpg",
+    // "images/exhibition/A6/6A-7-2.jpg",
     "images/exhibition/A6/6A-7-3.jpg",
     "images/exhibition/A6/6A-10-1.jpg",
     "images/exhibition/A6/6A-10-2.jpg",
