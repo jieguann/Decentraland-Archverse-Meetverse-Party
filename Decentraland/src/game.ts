@@ -51,28 +51,28 @@ NewYearTimeChecker.addComponent(
 
 export let sceneMessageBus = new MessageBus();
 
-let POAPBooth1 = new Dispenser(
-  {
-    position: new Vector3(192.34, 27.535, 120.23),
-    rotation: Quaternion.Euler(0, 0, 0),
-  },
-  "poapapi.dcl.guru",
-  "14799"
-);
+// let POAPBooth1 = new Dispenser(
+//   {
+//     position: new Vector3(192.34, 27.535, 120.23),
+//     rotation: Quaternion.Euler(0, 0, 0),
+//   },
+//   "poapapi.dcl.guru",
+//   "14799"
+// );
 
-let POAPBooth2 = new Dispenser(
-  {
-    position: new Vector3(289.5, 17.387, 55.997),
-    rotation: Quaternion.Euler(0, 0, 0),
-  },
-  "poapapi.dcl.guru",
-  "14800"
-);
+// let POAPBooth2 = new Dispenser(
+//   {
+//     position: new Vector3(289.5, 17.387, 55.997),
+//     rotation: Quaternion.Euler(0, 0, 0),
+//   },
+//   "poapapi.dcl.guru",
+//   "14800"
+// );
 
-sceneMessageBus.on("activatePoap", () => {
-  POAPBooth1.activate();
-  POAPBooth2.activate();
-});
+// sceneMessageBus.on("activatePoap", () => {
+//   POAPBooth1.activate();
+//   POAPBooth2.activate();
+// });
 
 
 
