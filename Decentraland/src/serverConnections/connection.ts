@@ -35,7 +35,7 @@ export async function connect(roomName: string, options: any = {}) {
      const ENDPOINT =  "wss://noc8vp.us-east-vin.colyseus.net" // local environment
 
 
-    // addConnectionDebugger(ENDPOINT);
+    addConnectionDebugger(ENDPOINT);
     const client = new Client(ENDPOINT);
 
     try {
@@ -65,7 +65,7 @@ function addConnectionDebugger(endpoint: string) {
     message.vAlign = "bottom"
     message.positionX = -80
     //updateConnectionMessage(`Connecting to ${endpoint}`, Color4.White());
-    updateConnectionMessage(`Connecting to Server`, Color4.White());
+    updateConnectionMessage(`Connecting to MeetVerse`, Color4.White());
 }
 
 function updateConnectionMessage(value: string, color: Color4) {
@@ -74,6 +74,6 @@ function updateConnectionMessage(value: string, color: Color4) {
 }
 
 function updateConnectionDebugger(room: Room) {
-    // updateConnectionMessage("Connected.", Color4.Green());
-    room.onLeave(() => updateConnectionMessage("Connection lost", Color4.Red()));
+    updateConnectionMessage("You have joined the Meetverse party. Touch others to make noise :) ", Color4.Green());
+    room.onLeave(() => updateConnectionMessage("Connection lost, please refresh the page to rejoin", Color4.Red()));
 }
