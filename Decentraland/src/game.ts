@@ -66,7 +66,7 @@ let POAPBooth2 = new Dispenser(
     rotation: Quaternion.Euler(0, 0, 0),
   },
   "poapapi.dcl.guru",
-  "14799"
+  "14800"
 );
 
 sceneMessageBus.on("activatePoap", () => {

@@ -481,7 +481,7 @@ export function beiwenquan(): void {
         })
     )
     screen1.addComponent(myMaterial)
-    engine.addEntity(screen1)
+    // engine.addEntity(screen1)
 
     //2.船屏幕
     const screen2 = new Entity()
@@ -490,7 +490,7 @@ export function beiwenquan(): void {
         new Transform({
             position: new Vector3(312.47, 16.451, 102.82),
             scale: new Vector3(21.7, 12.2, 1),
-            rotation: Quaternion.Euler(0, 85.7 + 180, 0)
+            rotation: Quaternion.Euler(0, 15.7 + 180, 0)
         })
     )
     screen2.addComponent(myMaterial)
@@ -516,7 +516,7 @@ export function beiwenquan(): void {
         new Transform({
             position: new Vector3(338.88, 16.451, 70.584),
             scale: new Vector3(21.7, 12.2, 1),
-            rotation: Quaternion.Euler(0, 15.7 + 180, 0)
+            rotation: Quaternion.Euler(0, 85.7 + 180, 0)
         })
     )
     screen4.addComponent(myMaterial)
