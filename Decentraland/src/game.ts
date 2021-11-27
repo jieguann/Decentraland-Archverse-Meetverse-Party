@@ -62,11 +62,11 @@ let POAPBooth1 = new Dispenser(
 
 let POAPBooth2 = new Dispenser(
   {
-    position: new Vector3(289.5, 17.387, 55.997),
+    position: new Vector3(264.47, 14.027, 35.341),
     rotation: Quaternion.Euler(0, 0, 0),
   },
   "poapapi.dcl.guru",
-  "14800"
+  "14799"
 );
 
 sceneMessageBus.on("activatePoap", () => {

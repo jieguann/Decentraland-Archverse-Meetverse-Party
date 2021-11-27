@@ -470,12 +470,12 @@ export function beiwenquan(): void {
     myVideoTexture.loop = true
 
     //#屏幕
-    //1.中间屏幕
+    //1.广场屏幕
     const screen1 = new Entity()
     screen1.addComponent(new PlaneShape())
     screen1.addComponent(
         new Transform({
-            position: new Vector3(196.44, 40.712, 155),
+            position: new Vector3(196.44, 40.712, 155.65),
             scale: new Vector3(38.4, 21.6, 1),
             rotation: Quaternion.Euler(0, -20 + 180, 0)
         })
@@ -483,6 +483,44 @@ export function beiwenquan(): void {
     screen1.addComponent(myMaterial)
     engine.addEntity(screen1)
 
+    //2.船屏幕
+    const screen2 = new Entity()
+    screen2.addComponent(new PlaneShape())
+    screen2.addComponent(
+        new Transform({
+            position: new Vector3(337.89, 16.451, 81.414),
+            scale: new Vector3(38.4, 21.6, 1),
+            rotation: Quaternion.Euler(0, 85.7 + 180, 0)
+        })
+    )
+    screen2.addComponent(myMaterial)
+    engine.addEntity(screen2)
+
+    //2.船屏幕
+    const screen3 = new Entity()
+    screen3.addComponent(new PlaneShape())
+    screen3.addComponent(
+        new Transform({
+            position: new Vector3(330.52, 16.451, 90.674),
+            scale: new Vector3(38.4, 21.6, 1),
+            rotation: Quaternion.Euler(0, 50.7 + 180, 0)
+        })
+    )
+    screen3.addComponent(myMaterial)
+    engine.addEntity(screen3)
+
+    //2.船屏幕
+    const screen4 = new Entity()
+    screen4.addComponent(new PlaneShape())
+    screen4.addComponent(
+        new Transform({
+            position: new Vector3(332.89, 16.451, 99.719),
+            scale: new Vector3(38.4, 21.6, 1),
+            rotation: Quaternion.Euler(0, 15.7 + 180, 0)
+        })
+    )
+    screen4.addComponent(myMaterial)
+    engine.addEntity(screen4)
 
 
 
