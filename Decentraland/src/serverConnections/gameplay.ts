@@ -109,8 +109,7 @@ connect("my_room").then((room) => {
     if (value == 0) {
       fader.getComponent(GLTFShape).visible = false
       // fader.addComponentOrReplace(stageLightOff)
-    } else if (value > 0 && value <= 1) {
-      fader.getComponent(GLTFShape).visible = true
+    } else if (value > 0 && value < 1) {
       if (0 < value && value <= 0.25){
         fader.addComponentOrReplace(stageLightBlue)
       } else if (0.3 < value && value <= 0.6) {
@@ -120,6 +119,8 @@ connect("my_room").then((room) => {
       } else if (0.9 < value && value < 1) {
         fader.addComponentOrReplace(stageLightWhite)
       }
+    } else if (value == 1){
+      fader.getComponent(GLTFShape).visible = true
     } else if (value > 1 && value < 2) {
       fader.getComponent(Transform).scale.set((((value - 1.5) * 2 + 1)) * 3,(((value - 1.5) * 2 + 1)) * 3, ((2 - value) * 1 + 1))
     } else if (value > 2 && value < 3) {
