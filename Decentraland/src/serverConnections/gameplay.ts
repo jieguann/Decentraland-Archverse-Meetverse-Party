@@ -104,7 +104,7 @@ connect("my_room").then((room) => {
   }
 
   //OSC message Control
-  function lightingControl(fader: Entity, value: number) {
+  function lightingControl(fader: Entity, value: number, y: number) {
     var foo: number
     if (value == 0) {
       fader.getComponent(GLTFShape).visible = false
@@ -121,13 +121,15 @@ connect("my_room").then((room) => {
         fader.addComponentOrReplace(stageLightWhite)
       }
     } else if (value > 1 && value < 2) {
-      fader.getComponent(Transform).scale.set((((value - 1.5) * 2 + 1)) * 4,(((value - 1.5) * 2 + 1)) * 4, 1.2)
+      fader.getComponent(Transform).scale.set((((value - 1.5) * 2 + 1)) * 3,(((value - 1.5) * 2 + 1)) * 3, ((2 - value) * 1 + 1))
     } else if (value > 2 && value < 3) {
       foo = fader.getComponent(Transform).rotation.eulerAngles.y
-      fader.getComponent(Transform).rotation.setEuler((value - 3.5) * 90 + 120, foo, 0)
+      fader.getComponent(Transform).rotation.setEuler((value - 3.5) * 90 + 100, foo, 0)
     } else if (value > 3 && value < 4) {
       foo = fader.getComponent(Transform).rotation.eulerAngles.x
-      fader.getComponent(Transform).rotation.setEuler(foo, (value - 3.5) * 90 + 160 , 0)
+      fader.getComponent(Transform).rotation.setEuler(foo, (value - 3.5) * 120 + 230 , 0)
+    } else if (4 <= value && value <= 5){
+      fader.getComponent(Transform).position.y = y - ((value - 4) * 10.5 )
     } else if (value == 10){
       fader.addComponentOrReplace(stageLightWhite)
     } else if (value == 11){
@@ -139,19 +141,23 @@ connect("my_room").then((room) => {
     }
   }
   room.state.listen('fader1', (value: number) => {
-    lightingControl(fader1, value)
+    lightingControl(fader1, value, 23)
+    lightingControl(fader11, value, 5.5)
   })
 
   room.state.listen('fader2', (value: number) => {
-    lightingControl(fader2, value)
+    lightingControl(fader2, value, 23)
+    lightingControl(fader12, value, 12.6)
   })
 
   room.state.listen('fader3', (value: number) => {
-    lightingControl(fader3, value)
+    lightingControl(fader3, value, 23)
+    lightingControl(fader13, value, 12.6)
   })
 
   room.state.listen('fader4', (value: number) => {
-    lightingControl(fader4, value)
+    lightingControl(fader4, value, 23)
+    lightingControl(fader14, value, 5.5)
   })
 
 }).catch((err) => {
@@ -165,7 +171,7 @@ const stageLightWhite = new GLTFShape("models/beiwenquan/StageLightWhite.glb")
 const stageLightBlue = new GLTFShape("models/beiwenquan/StageLightBlue.glb")
 const stageLightGreen = new GLTFShape("models/beiwenquan/StageLightGreen.glb")
 const stageLightRed = new GLTFShape("models/beiwenquan/StageLightRed.glb")
-// const stageLightOff = new GLTFShape("models/beiwenquan/StageLightOff.glb")
+const stageLightOff = new GLTFShape("models/beiwenquan/StageLightOff.glb")
 
 
 //osc entity being controlled
@@ -174,7 +180,7 @@ let fader1 = new Entity()
 fader1.addComponent(stageLightWhite)
 fader1.addComponent(
   new Transform({
-    position: new Vector3(178.43, 55, 148.83),
+    position: new Vector3(301.91, 23, 105.55),
     rotation: Quaternion.Euler(0, 160, 0)
   })
 )
@@ -184,7 +190,7 @@ let fader2 = new Entity()
 fader2.addComponent(stageLightWhite)
 fader2.addComponent(
   new Transform({
-    position: new Vector3(189.75, 55, 152.86),
+    position: new Vector3(323.15, 23.193, 99.283),
     rotation: Quaternion.Euler(0, 160, 0)
   })
 )
@@ -194,7 +200,7 @@ let fader3 = new Entity()
 fader3.addComponent(stageLightWhite)
 fader3.addComponent(
   new Transform({
-    position: new Vector3(204.13, 55, 158.17),
+    position: new Vector3(337.55, 23, 81.698),
     rotation: Quaternion.Euler(0, 160, 0)
   })
 )
@@ -204,8 +210,84 @@ let fader4 = new Entity()
 fader4.addComponent(stageLightWhite)
 fader4.addComponent(
   new Transform({
-    position: new Vector3(214.5, 55, 162.17),
+    position: new Vector3(339.5, 23, 59.672),
     rotation: Quaternion.Euler(0, 160, 0)
   })
 )
 engine.addEntity(fader4)
+
+
+let fader11Parent = new Entity()
+fader11Parent.addComponent(
+  new Transform({
+    position: new Vector3(293.96, 5.5, 75.047),
+    rotation: Quaternion.Euler(120, 0, 90)
+  })
+)
+engine.addEntity(fader11Parent)
+let fader11 = new Entity()
+fader11.addComponent(stageLightWhite)
+fader11.addComponent(
+  new Transform({
+    position: new Vector3(0, 0, 0),
+    rotation: Quaternion.Euler(0, 0, 0)
+  })
+)
+fader11.setParent(fader11Parent)
+
+
+let fader12Parent = new Entity()
+fader12Parent.addComponent(
+  new Transform({
+    position: new Vector3(268.5, 9.6, 50),
+    rotation: Quaternion.Euler(120, 0, 90)
+  })
+)
+engine.addEntity(fader12Parent)
+let fader12 = new Entity()
+fader12.addComponent(stageLightWhite)
+fader12.addComponent(
+  new Transform({
+    position: new Vector3(0, 0, 0),
+    rotation: Quaternion.Euler(0, 0, 0)
+  })
+)
+fader12.setParent(fader12Parent)
+
+
+let fader13Parent = new Entity()
+fader13Parent.addComponent(
+  new Transform({
+    position: new Vector3(280.87, 9.6, 34),
+    rotation: Quaternion.Euler(120, 0, 90)
+  })
+)
+engine.addEntity(fader13Parent)
+let fader13 = new Entity()
+fader13.addComponent(stageLightWhite)
+fader13.addComponent(
+  new Transform({
+    position: new Vector3(0, 0, 0),
+    rotation: Quaternion.Euler(0, 0, 0)
+  })
+)
+fader13.setParent(fader13Parent)
+
+
+let fader14Parent = new Entity()
+fader14Parent.addComponent(
+  new Transform({
+    position: new Vector3(308.87, 5.5, 58.053),
+    rotation: Quaternion.Euler(120, 0, 90)
+  })
+)
+engine.addEntity(fader14Parent)
+let fader14 = new Entity()
+fader14.addComponent(stageLightWhite)
+fader14.addComponent(
+  new Transform({
+    position: new Vector3(0, 0, 0),
+    rotation: Quaternion.Euler(0, 0, 0)
+  })
+)
+fader14.setParent(fader14Parent)
