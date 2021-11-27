@@ -26,7 +26,7 @@ let exhibitionVideo_transform: Transform[] = [
     new Transform({ position: new Vector3(370.497, 17, 235.465), rotation: Quaternion.Euler(0, 0 + 180, 0), scale: new Vector3(4.44, 2.5, 1) }),
     new Transform({ position: new Vector3(374.693, 17, 227.111), rotation: Quaternion.Euler(0, 90 + 180, 0), scale: new Vector3(4, 3, 1) }),
     new Transform({ position: new Vector3(374.693, 17, 219.017), rotation: Quaternion.Euler(0, 90 + 180, 0), scale: new Vector3(4, 3, 1) }),
-    new Transform({ position: new Vector3(138.005, 36.2251, 138.664), rotation: Quaternion.Euler(0, 90 + 180, 0), scale: new Vector3(7, 4, 1) }),
+    new Transform({ position: new Vector3(138.005, 38.2251, 138.664), rotation: Quaternion.Euler(0, 90 + 180, 0), scale: new Vector3(7, 4, 1) }),
     new Transform({ position: new Vector3(87.1482, 34, 38.5206), rotation: Quaternion.Euler(0, -180 + 180, 0), scale: new Vector3(2.444, 2, 1) }),
     new Transform({ position: new Vector3(89.8584, 34, 55.0995), rotation: Quaternion.Euler(0, 0 + 180, 0), scale: new Vector3(2.667, 2, 1) }),
     new Transform({ position: new Vector3(27.9006, 36.5, 40.4248), rotation: Quaternion.Euler(0, -124 + 180, 0), scale: new Vector3(2, 3.56, 1) }),

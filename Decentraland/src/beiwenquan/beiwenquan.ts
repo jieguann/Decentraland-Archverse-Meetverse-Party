@@ -332,7 +332,7 @@ export function beiwenquan(): void {
             A6_1F_UPtriggerSphere, //shape
             {
                 onCameraEnter: () => {
-                    movePlayerTo(new Vector3(273.877, 48.8999, 251.804))
+                    movePlayerTo(new Vector3(273.877, 50.3094, 265.18))
                     ui.displayAnnouncement('2F', 5, Color4.Red(), 50, true)
                 }
             }
@@ -354,7 +354,7 @@ export function beiwenquan(): void {
             A6_2F_UPtriggerSphere, //shape
             {
                 onCameraEnter: () => {
-                    movePlayerTo(new Vector3(273.861, 52.7465, 265.337))
+                    movePlayerTo(new Vector3(273.877, 54.8233, 259.045))
                     ui.displayAnnouncement('3F', 5, Color4.Red(), 50, true)
                 }
             }
@@ -377,7 +377,7 @@ export function beiwenquan(): void {
             A6_2F_DOWNtriggerSphere, //shape
             {
                 onCameraEnter: () => {
-                    movePlayerTo(new Vector3(273.861, 43.2085, 265.337))
+                    movePlayerTo(new Vector3(273.877, 45.4543, 251.804))
                     ui.displayAnnouncement('1F', 5, Color4.Red(), 50, true)
                 }
             }
@@ -399,7 +399,7 @@ export function beiwenquan(): void {
             A6_3F_DOWNtriggerSphere, //shape
             {
                 onCameraEnter: () => {
-                    movePlayerTo(new Vector3(273.877, 48.8999, 251.804))
+                    movePlayerTo(new Vector3(273.877, 50.3094, 265.18))
                     ui.displayAnnouncement('2F', 5, Color4.Red(), 50, true)
                 }
             }
@@ -488,8 +488,8 @@ export function beiwenquan(): void {
     screen2.addComponent(new PlaneShape())
     screen2.addComponent(
         new Transform({
-            position: new Vector3(337.89, 16.451, 81.414),
-            scale: new Vector3(38.4, 21.6, 1),
+            position: new Vector3(312.47, 16.451, 102.82),
+            scale: new Vector3(21.7, 12.2, 1),
             rotation: Quaternion.Euler(0, 85.7 + 180, 0)
         })
     )
@@ -502,7 +502,7 @@ export function beiwenquan(): void {
     screen3.addComponent(
         new Transform({
             position: new Vector3(330.52, 16.451, 90.674),
-            scale: new Vector3(38.4, 21.6, 1),
+            scale: new Vector3(21.7, 12.2, 1),
             rotation: Quaternion.Euler(0, 50.7 + 180, 0)
         })
     )
@@ -514,8 +514,8 @@ export function beiwenquan(): void {
     screen4.addComponent(new PlaneShape())
     screen4.addComponent(
         new Transform({
-            position: new Vector3(332.89, 16.451, 99.719),
-            scale: new Vector3(38.4, 21.6, 1),
+            position: new Vector3(338.88, 16.451, 70.584),
+            scale: new Vector3(21.7, 12.2, 1),
             rotation: Quaternion.Euler(0, 15.7 + 180, 0)
         })
     )
