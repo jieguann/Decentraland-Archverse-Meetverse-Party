@@ -126,6 +126,14 @@ export function beiwenquan(): void {
         position: new Vector3(0, 0, 0)
     }))
 
+    const AE1 = new Entity();
+    engine.addEntity(AE1);
+    AE1.addComponent(new GLTFShape("models/beiwenquan/AE1.glb"));
+    AE1.addComponent(new Transform({
+        rotation: Quaternion.Euler(0, 180, 0),
+        position: new Vector3(0, 0, 0)
+    }))
+
 
 
     //舞台
@@ -481,46 +489,46 @@ export function beiwenquan(): void {
         })
     )
     screen1.addComponent(myMaterial)
-    // engine.addEntity(screen1)
+    engine.addEntity(screen1)
 
-    //2.船屏幕
-    const screen2 = new Entity()
-    screen2.addComponent(new PlaneShape())
-    screen2.addComponent(
-        new Transform({
-            position: new Vector3(312.47, 16.451, 102.82),
-            scale: new Vector3(21.7, 12.2, 1),
-            rotation: Quaternion.Euler(0, 15.7 + 180, 0)
-        })
-    )
-    screen2.addComponent(myMaterial)
-    engine.addEntity(screen2)
+    // //2.船屏幕
+    // const screen2 = new Entity()
+    // screen2.addComponent(new PlaneShape())
+    // screen2.addComponent(
+    //     new Transform({
+    //         position: new Vector3(312.47, 16.451, 102.82),
+    //         scale: new Vector3(21.7, 12.2, 1),
+    //         rotation: Quaternion.Euler(0, 15.7 + 180, 0)
+    //     })
+    // )
+    // screen2.addComponent(myMaterial)
+    // engine.addEntity(screen2)
 
-    //2.船屏幕
-    const screen3 = new Entity()
-    screen3.addComponent(new PlaneShape())
-    screen3.addComponent(
-        new Transform({
-            position: new Vector3(330.52, 16.451, 90.674),
-            scale: new Vector3(21.7, 12.2, 1),
-            rotation: Quaternion.Euler(0, 50.7 + 180, 0)
-        })
-    )
-    screen3.addComponent(myMaterial)
-    engine.addEntity(screen3)
+    // //2.船屏幕
+    // const screen3 = new Entity()
+    // screen3.addComponent(new PlaneShape())
+    // screen3.addComponent(
+    //     new Transform({
+    //         position: new Vector3(330.52, 16.451, 90.674),
+    //         scale: new Vector3(21.7, 12.2, 1),
+    //         rotation: Quaternion.Euler(0, 50.7 + 180, 0)
+    //     })
+    // )
+    // screen3.addComponent(myMaterial)
+    // engine.addEntity(screen3)
 
-    //2.船屏幕
-    const screen4 = new Entity()
-    screen4.addComponent(new PlaneShape())
-    screen4.addComponent(
-        new Transform({
-            position: new Vector3(338.88, 16.451, 70.584),
-            scale: new Vector3(21.7, 12.2, 1),
-            rotation: Quaternion.Euler(0, 85.7 + 180, 0)
-        })
-    )
-    screen4.addComponent(myMaterial)
-    engine.addEntity(screen4)
+    // //2.船屏幕
+    // const screen4 = new Entity()
+    // screen4.addComponent(new PlaneShape())
+    // screen4.addComponent(
+    //     new Transform({
+    //         position: new Vector3(338.88, 16.451, 70.584),
+    //         scale: new Vector3(21.7, 12.2, 1),
+    //         rotation: Quaternion.Euler(0, 85.7 + 180, 0)
+    //     })
+    // )
+    // screen4.addComponent(myMaterial)
+    // engine.addEntity(screen4)
 
 
 

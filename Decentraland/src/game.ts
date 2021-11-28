@@ -60,18 +60,18 @@ let POAPBooth1 = new Dispenser(
   "14799"
 );
 
-let POAPBooth2 = new Dispenser(
-  {
-    position: new Vector3(264.47, 14.027, 35.341),
-    rotation: Quaternion.Euler(0, 0, 0),
-  },
-  "poapapi.dcl.guru",
-  "14800"
-);
+// let POAPBooth2 = new Dispenser(
+//   {
+//     position: new Vector3(264.47, 14.027, 35.341),
+//     rotation: Quaternion.Euler(0, 0, 0),
+//   },
+//   "poapapi.dcl.guru",
+//   "14800"
+// );
 
 sceneMessageBus.on("activatePoap", () => {
   POAPBooth1.activate();
-  POAPBooth2.activate();
+  // POAPBooth2.activate();
 });
 
 
