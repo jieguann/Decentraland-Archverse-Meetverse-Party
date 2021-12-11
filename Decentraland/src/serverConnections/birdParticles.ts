@@ -5,7 +5,7 @@ import { CollidedData } from './gameplay';
 
 const birdScale = new Vector3(0.5, 0.5, 0.5);
 let birdShape = resourse.bird;
-const particles = resourse.particles;
+// const particles = resourse.particles;
 // const birdScale = new Vector3(0.15, 0.15, 0.15);
 
 export class SpawnBird{
@@ -41,19 +41,11 @@ function newBird(position: CollidedData, clip: any, count: number) {
         })
     );
 
-    // let birdShape: any = null;
-    // const particlesKeys = Object.keys(particles);
-    // const randmomNum = randomInt(0, particlesKeys.length -1);
-    // const key = particlesKeys[randmomNum];
-    // if(isValidKey(key, particles)) {
-    //     birdShape = particles[key];
-    // }
-
     bird.addComponent(birdShape);
     const nextPos = new Vector3(
-        position.x + Math.random() * 8 * randomDirection(),
-        position.y + Math.random() * 10,
-        position.z + Math.random() * 8 * randomDirection()
+        position.x + Math.random() * 3 * randomDirection(),
+        position.y + Math.random() * 3,
+        position.z + Math.random() * 3 * randomDirection()
     );
 
     bird.getComponent(Transform).lookAt(nextPos);
@@ -61,7 +53,7 @@ function newBird(position: CollidedData, clip: any, count: number) {
         new utils.MoveTransformComponent(
             startPosition, 
             nextPos, 
-            4, 
+            2, 
             () => {
                 engine.removeEntity(bird)
             })

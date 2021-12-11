@@ -99,7 +99,7 @@ connect("my_room").then((room) => {
       const dateSceond = Date.parse(new Date().toString())/1000;
       room.send("record-timeline", {position: position, music: playMusiceKey, date: dateSceond})
     }
-    const pariticlesCount: number = randomInt(10, 20);
+    const pariticlesCount: number = randomInt(4, 8);
     new SpawnBird(position, clip, pariticlesCount);
   }
 

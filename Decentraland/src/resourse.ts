@@ -64,10 +64,5 @@ for(const key in randomSoundPaths) {
 
 export default {
     randomSound: randomSound,
-    particles: {
-        particles1: new GLTFShape("models/particles/monster1.glb"),
-        particles2: new GLTFShape("models/particles/monster2.glb"),
-        particles3: new GLTFShape("models/particles/monster3.glb"),
-    },
     bird: new GLTFShape("models/particles/star.glb"),
 }
